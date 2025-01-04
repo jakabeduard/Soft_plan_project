@@ -10,6 +10,8 @@ from written_by_us.reset_server import cleaning_server
 if __name__ == '__main__':
 
     set_host_and_headers("E9A377-B0723B-53A5DC-D12E23-67E2F0","https://edu.mailserver.ro")
+    result=cleaning_server()
+    print(json.dumps(result, indent=4))
 
 
 
@@ -27,7 +29,7 @@ if __name__ == '__main__':
     #     # 3. Delete all mailboxes
     # delete_mailboxes(domains)
     #
-    result=create_domain()
+    # result=create_domain()
 
 
     # result = get_mailbox_all()
@@ -36,7 +38,7 @@ if __name__ == '__main__':
     #
 
 
-    print(json.dumps(result, indent=4))
+    # print(json.dumps(result, indent=4))
     # result3=delete_mailboxes(result2)
     # print(json.dumps(result3, indent=4))
 
