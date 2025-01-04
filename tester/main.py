@@ -4,6 +4,7 @@ import json
 from written_by_us.api import set_host_and_headers, get_domanin_all, get_mailbox_all, delete_mailboxes, create_domain, \
     create_mailbox
 from written_by_us.converter import extract_domain_names, extract_email_addresses
+from written_by_us.create_testers import create_testers
 from written_by_us.reset_server import cleaning_server
 
 # Press the green button in the gutter to run the script.
@@ -12,6 +13,17 @@ if __name__ == '__main__':
     set_host_and_headers("E9A377-B0723B-53A5DC-D12E23-67E2F0","https://edu.mailserver.ro")
     result=cleaning_server()
     print(json.dumps(result, indent=4))
+
+    # result = create_testers(9)
+    # print(json.dumps(result, indent=4))
+    #
+
+    # result=create_domain()  # Create a new domain
+    # print(json.dumps(result, indent=4))
+    #
+    # for i in range(0, 4 + 1):
+    #     create_mailbox(i)  # Create 'n' new mailboxes
+
 
 
 

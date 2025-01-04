@@ -171,14 +171,12 @@ def create_domain():
 
 
 
-
-def create_mailbox():
-    #CREATE_MAILBOX_API_URL = "https://edu.mailserver.ro/api/v1/add/mailbox"
+def create_mailbox(i):
     CREATE_MAILBOX_API_URL = f"{host}/api/v1/add/mailbox"
     CREATE_MAILBOX_BODY = {
-        "local_part": "tester",
+        "local_part": f"tester{i}",
         "domain": "test.com",
-        "name": f"Teszter",
+        "name": f"Teszter{i}",
         "quota": 3072,
         "password": "0123456789",
         "password2": "0123456789",
@@ -199,7 +197,7 @@ def create_mailbox():
             print(f"Error: {response.status_code} - {response.text}")
             return None
     except requests.exceptions.RequestException as e:
-        print("Error adding mailbox:", e)
+        print(f"Error adding mailbox {CREATE_MAILBOX_BODY['local_part']}:", e)
         return None
 
 
