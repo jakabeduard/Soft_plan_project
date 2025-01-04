@@ -6,16 +6,27 @@ from written_by_us.api import set_host_and_headers, get_domanin_all, get_mailbox
 from written_by_us.converter import extract_domain_names, extract_email_addresses
 from written_by_us.create_testers import create_testers
 from written_by_us.reset_server import cleaning_server
+from written_by_us.smtp import send_email_with_attachment
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
 
     set_host_and_headers("E9A377-B0723B-53A5DC-D12E23-67E2F0","https://edu.mailserver.ro")
-    result=cleaning_server()
-    print(json.dumps(result, indent=4))
-
-    # result = create_testers(9)
+    # result=cleaning_server()
     # print(json.dumps(result, indent=4))
+
+    # result = create_testers(15)
+    # print(json.dumps(result, indent=4))
+
+
+    sender_email = "a@alma.ro"
+    recipient_email = "b@alma.ro"
+    subject = "Test Emailke"
+    body = "This is a test email sent from Python."
+    file_path = "D:/IMG_20241026_200124_7.jpg"  # Replace with the actual file path
+
+    result=send_email_with_attachment( sender_email, recipient_email, subject, body, file_path)
+    print(json.dumps(result, indent=4))
     #
 
     # result=create_domain()  # Create a new domain

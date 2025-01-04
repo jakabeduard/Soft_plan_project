@@ -7,9 +7,9 @@ from email import encoders
 # Email configuration
 smtp_server = "edu.mailserver.ro"  # Replace with your SMTP server
 smtp_port = 587  # Standard port for STARTTLS
-sender_email = "janos@edutus.mailserver.ro"
-sender_password = "012345"
-recipient_email = "janoska@edutus.mailserver.ro"
+sender_email = "tester0@test.com"
+sender_password = "0123456789"
+recipient_email = "tester10@test.com"
 
 # Create email content
 subject = "Test Emailke"
