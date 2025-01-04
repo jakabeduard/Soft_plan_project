@@ -1,13 +1,10 @@
 # This is a sample Python script.
 import json
 
-from written_by_us.api import set_host_and_headers
+from written_by_us.api import set_host_and_headers, get_domanin_all, get_mailbox_all, delete_mailboxes, create_domain, \
+    create_mailbox
 from written_by_us.converter import extract_domain_names, extract_email_addresses
-
-
-
-
-
+from written_by_us.reset_server import cleaning_server
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
@@ -20,10 +17,37 @@ if __name__ == '__main__':
     #     create_mailbox(i)
 
 
-    # domains = get_domanin_all()
-    # emails = get_mailbox_all()
-
+    # result = get_domanin_all()
     # print(json.dumps(result, indent=4))
+    #
+    # if result:
+    #     domains = [entry['domain_name'] for entry in result]
+    #     print("Extracted domanins:", domains)
+    #
+    #     # 3. Delete all mailboxes
+    # delete_mailboxes(domains)
+    #
+    result=create_domain()
+
+
+    # result = get_mailbox_all()
+    #
+    #
+    #
+
+
+    print(json.dumps(result, indent=4))
+    # result3=delete_mailboxes(result2)
+    # print(json.dumps(result3, indent=4))
+
+    # result = get_mailbox_all()
+    #
+    # if result:
+    #     email_list = [entry['username'] for entry in result]
+    #     print("Extracted email addresses:", email_list)
+    #
+    #     delete_mailboxes(email_list)
+
 
     # Save the result to a file
     # with open('domain_data.json', 'w') as file:
@@ -39,10 +63,10 @@ if __name__ == '__main__':
 
 
 
-    result = extract_domain_names('domain_data.json')
-    print(f"Domain names extracted and saved in {result}")
-    emails=extract_email_addresses('email_addresses.json')
-    print(f"Domain names extracted and saved in {emails}")
+    # result = extract_domain_names('domain_data.json')
+    # print(f"Domain names extracted and saved in {result}")
+    # emails=extract_email_addresses('email_addresses.json')
+    # print(f"Domain names extracted and saved in {emails}")
     # result=create_mailbox()
     # print(json.dumps(result, indent=4))
 

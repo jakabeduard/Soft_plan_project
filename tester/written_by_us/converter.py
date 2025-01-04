@@ -25,14 +25,33 @@ def extract_domain_names(input_file):
 
 
 
-def extract_email_addresses(input_file):
-    try:
-        # Beolvassa az input JSON fájlt
-        with open(input_file, 'r') as file:
-            data = json.load(file)
+# def extract_email_addresses(input_file):
+#     try:
+#         # Beolvassa az input JSON fájlt
+#         with open(input_file, 'r') as file:
+#             data = json.load(file)
+#
+#         # Kinyeri az email címeket a 'username' mezőből
+#         email_addresses = [entry['username'] for entry in data if 'username' in entry]
+#
+#         # Kiírja az email címeket egy új fájlba
+#         with open('../email_addresses.json', 'w') as file:
+#             json.dump(email_addresses, file, indent=2)
+#
+#         # Kiírja az email címeket a konzolra
+#         print(json.dumps(email_addresses, indent=2))
+#
+#         return 'email_addresses.json'
+#
+#     except FileNotFoundError:
+#         print(f"The file '{input_file}' was not found.")
+#     except json.JSONDecodeError:
+#         print("Error occurred while decoding JSON.")
 
+def extract_email_addresses(mailboxes):
+    try:
         # Kinyeri az email címeket a 'username' mezőből
-        email_addresses = [entry['username'] for entry in data if 'username' in entry]
+        email_addresses = [entry['username'] for entry in mailboxes if 'username' in entry]
 
         # Kiírja az email címeket egy új fájlba
         with open('../email_addresses.json', 'w') as file:
@@ -43,7 +62,5 @@ def extract_email_addresses(input_file):
 
         return 'email_addresses.json'
 
-    except FileNotFoundError:
-        print(f"The file '{input_file}' was not found.")
     except json.JSONDecodeError:
         print("Error occurred while decoding JSON.")

@@ -1,6 +1,9 @@
 import json
 
 import requests
+import urllib3
+
+urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 
 
@@ -8,6 +11,9 @@ import requests
 #     "X-API-Key": "E9A377-B0723B-53A5DC-D12E23-67E2F0",
 #     "Content-Type": "application/json"
 # }
+host = ""
+headers = {}
+
 def set_host_and_headers(api_key, host_url):
     """Beállítja a host és a headers globális változókat."""
     global headers, host
@@ -44,21 +50,16 @@ def get_mailbox_all():
         print(f"An error occurred: {e}")
 
 
-def delete_mailboxes( mailboxes,host):
+def delete_mailboxes(email_list):
     # Az API végpont
-    #URL_DELETE_EMAIL_ADDRESSES = "https://edu.mailserver.ro/api/v1/delete/mailbox"
     URL_DELETE_EMAIL_ADDRESSES = f"{host}/api/v1/delete/mailbox"
 
-    # A kérés törzse (body), ami az email címeket tartalmazza
-   # body = json.dumps(mailboxes)
-
     try:
-        # POST kérés küldése
-        response = requests.post(URL_DELETE_EMAIL_ADDRESSES, headers=headers, json=mailboxes , verify=False)
+        # POST kérés küldése az email címek listájával
+        response = requests.post(URL_DELETE_EMAIL_ADDRESSES, headers=headers, json=email_list, verify=False)
 
         # Ellenőrizzük, hogy sikeres volt-e a kérés
         if response.status_code == 200:
-            # Ha sikeres, feldolgozzuk a választ
             response_data = response.json()
             for item in response_data:
                 if item["type"] == "success":
@@ -71,24 +72,48 @@ def delete_mailboxes( mailboxes,host):
             print(response.text)
 
     except requests.exceptions.RequestException as e:
-        # Hiba kezelés
         print(f"An error occurred: {e}")
 
 
-def delete_domains(host, domains):
-    # Az API végpont
-    URL_DELETE_DOMAINS = f"{host}/api/v1/delete/mailbox"
+# def delete_domains( domains):
+#     # Az API végpont
+#     URL_DELETE_DOMAINS = f"{host}/api/v1/delete/mailbox"
+#
+#     # A kérés törzse (body), ami a domainek listáját tartalmazza
+#     #body = json.dumps(domains)
+#
+#     try:
+#         # POST kérés küldése
+#         response = requests.post(URL_DELETE_DOMAINS, headers=headers, json=domains, verify=False)
+#
+#         # Ellenőrizzük, hogy sikeres volt-e a kérés
+#         if response.status_code == 200:
+#             # Ha sikeres, feldolgozzuk a választ
+#             response_data = response.json()
+#             for item in response_data:
+#                 if item["type"] == "success":
+#                     print(f"Success: {item['msg']}")
+#                     print(f"Log: {item['log']}")
+#                 else:
+#                     print(f"Error: {item['msg']}")
+#         else:
+#             print(f"Request failed with status code {response.status_code}")
+#             print(response.text)
+#
+#     except requests.exceptions.RequestException as e:
+#         # Hiba kezelés
+#         print(f"An error occurred: {e}")
 
-    # A kérés törzse (body), ami a domainek listáját tartalmazza
-    #body = json.dumps(domains)
+def delete_domains(domains):
+    URL_DELETE_DOMAINS = f"{host}/api/v1/delete/domain"
+    print("URL:", URL_DELETE_DOMAINS)
+    print("Headers:", headers)
+    print("Body:", domains)
 
     try:
-        # POST kérés küldése
         response = requests.post(URL_DELETE_DOMAINS, headers=headers, json=domains, verify=False)
 
-        # Ellenőrizzük, hogy sikeres volt-e a kérés
         if response.status_code == 200:
-            # Ha sikeres, feldolgozzuk a választ
             response_data = response.json()
             for item in response_data:
                 if item["type"] == "success":
@@ -96,16 +121,19 @@ def delete_domains(host, domains):
                     print(f"Log: {item['log']}")
                 else:
                     print(f"Error: {item['msg']}")
+        elif response.status_code == 403:
+            print("Error: Forbidden - Check your API key or permissions.")
+        elif response.status_code == 401:
+            print("Error: Unauthorized - API key might be invalid.")
         else:
             print(f"Request failed with status code {response.status_code}")
             print(response.text)
 
     except requests.exceptions.RequestException as e:
-        # Hiba kezelés
         print(f"An error occurred: {e}")
 
 
-def create_domain(host):
+def create_domain():
    # CREATE_DOMAIN_API_URL = "https://edu.mailserver.ro/api/v1/add/domain"
     CREATE_DOMAIN_API_URL = f"{host}/api/v1/add/domain"
 
@@ -138,20 +166,20 @@ def create_domain(host):
 
 
 
-def create_mailbox(i,host):
+def create_mailbox():
     #CREATE_MAILBOX_API_URL = "https://edu.mailserver.ro/api/v1/add/mailbox"
     CREATE_MAILBOX_API_URL = f"{host}/api/v1/add/mailbox"
     CREATE_MAILBOX_BODY = {
-        "local_part": f"tester{i}",
+        "local_part": "tester",
         "domain": "test.com",
-        "name": f"Teszter{i}",
+        "name": f"Teszter",
         "quota": 3072,
         "password": "0123456789",
         "password2": "0123456789",
         "active": True,
         "force_pw_update": True,
         "tls_enforce_in": True,
-        "tls_enforce_out": True
+        "tls_enforce_out": True,
     }
 
     try:
