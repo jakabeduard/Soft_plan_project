@@ -14,7 +14,7 @@ urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 host = ""
 headers = {}
 
-def set_host_and_headers(api_key, host_url):
+def set_host_and_headers_api(api_key, host_url):
     """Beállítja a host és a headers globális változókat."""
     global headers, host
     host = host_url

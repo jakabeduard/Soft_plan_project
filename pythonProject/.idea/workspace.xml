@@ -4,7 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2d03bd8e-d2c9-4ab9-8bf8-337f153382af" name="Changes" comment="" />
+    <list default="true" id="2d03bd8e-d2c9-4ab9-8bf8-337f153382af" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../tester/written_by_us/load_server_capacity.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tester/written_by_us/random_generator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tester/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/../tester/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tester/written_by_us/api.py" beforeDir="false" afterPath="$PROJECT_DIR$/../tester/written_by_us/api.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tester/written_by_us/get_and_send_emails.py" beforeDir="false" afterPath="$PROJECT_DIR$/../tester/written_by_us/get_and_send_emails.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tester/written_by_us/imap.py" beforeDir="false" afterPath="$PROJECT_DIR$/../tester/written_by_us/imap.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tester/written_by_us/smtp.py" beforeDir="false" afterPath="$PROJECT_DIR$/../tester/written_by_us/smtp.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

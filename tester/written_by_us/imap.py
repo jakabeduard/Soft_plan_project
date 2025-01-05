@@ -3,12 +3,16 @@ import email
 from email.header import decode_header
 import os
 
+def set_server_host(host_edu_mailserver_ro):
+    global hostv2
+    hostv2=host_edu_mailserver_ro
+
 
 def fetch_and_save_email(email_user, save_directory):
     """Fetch emails from specified folders and save them with attachments."""
 
     # Fixed configurations
-    imap_server = "edu.mailserver.ro"  # IMAP server address
+    imap_server = hostv2   # IMAP server address
     email_pass = "0123456789"  # Password for the email account
     folders = ["INBOX", "Sent", "Trash", "Junk", "Drafts", "Archive"]  # Folders to synchronize
 
