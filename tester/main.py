@@ -47,6 +47,13 @@ if __name__ == '__main__':
     # print(json.dumps(result, indent=4))
 
 
+    #ssh cpu  lekerdezes
+    #
+    # get_server_info_ssh(
+    #     hostname="your.mailcow.server",  # Cseréld le a szerver IP címére vagy host nevére
+    #     username="your_username",  # SSH felhasználónév
+    #     password="your_password"  # SSH jelszó
+    # )
 
 
 
