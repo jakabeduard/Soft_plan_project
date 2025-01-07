@@ -1,55 +1,79 @@
-import paramiko
 import time
-import keyboard  # A keyboard könyvtár importálása
 
-def get_server_info_ssh(hostname, username, password):
-    """
-    SSH-n keresztül lekéri a szerver hardverinformációit 30 Hz-es frissítéssel végtelen ciklusban.
-    A ciklus leáll, ha bármilyen billentyűt lenyomsz.
+import keyboard
+import paramiko
 
-    Args:
-        hostname (str): A szerver címe.
-        username (str): Az SSH felhasználónév.
-        password (str): Az SSH jelszó.
-    """
+
+host="edu.mailserver.ro"
+# username="admin"
+# password="01234"
+
+
+def set_ssh(user, pwd):
+    global username, password
+    username = user
+    password = pwd
+
+def set_server_host(host_edu_mailserver_ro):
+    global host
+    host = host_edu_mailserver_ro
+
+def get_server_info(host, username, password):
     try:
-        # SSH kapcsolat létrehozása
-        client = paramiko.SSHClient()
-        client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
-        client.connect(hostname, username=username, password=password)
+        # Establish SSH connection
+        ssh = paramiko.SSHClient()
+        ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+        ssh.connect(hostname=host, username=username, password=password)
 
-        commands = {
-            "cpu_capacity": "lscpu | grep 'Model name'",
-            "memory_capacity": "free -h | grep 'Mem:'",
-            "temperature": "sensors | grep 'Package id 0:'"
+        # CPU Capacity
+        stdin, stdout, stderr = ssh.exec_command("lscpu | grep 'Model name\\|CPU(s)'")
+        cpu_info = stdout.read().decode().strip()
+
+        # CPU Temperature
+        stdin, stdout, stderr = ssh.exec_command("sensors | grep 'Package id 0:'")
+        cpu_temp = stdout.read().decode().strip()
+
+        # Check if CPU temperature is empty, then set a fallback message
+        if not cpu_temp:
+            cpu_temp = "Unable to retrieve CPU temperature. Ensure 'lm-sensors' is installed and configured."
+
+        # Memory Capacity
+        stdin, stdout, stderr = ssh.exec_command("free -h")
+        memory_info = stdout.read().decode().strip()
+
+        ssh.close()
+
+        # Return results
+        return {
+            "CPU Info": cpu_info,
+            "CPU Temperature": cpu_temp,
+            "Memory Info": memory_info
         }
-
-        while True:
-            # Ellenőrizzük, hogy lenyomtak-e egy billentyűt
-            if keyboard.is_pressed():  # Ha bármilyen billentyű lenyomásra kerül
-                print("Kilépés a programból...")
-                break  # Kilépés a ciklusból
-
-            start_time = time.time()
-
-            results = {}
-            for key, command in commands.items():
-                stdin, stdout, stderr = client.exec_command(command)
-                results[key] = stdout.read().decode().strip()
-
-            # Eredmények kiírása
-            print("CPU Kapacitás:", results.get("cpu_capacity", "N/A"))
-            print("Memória Kapacitás:", results.get("memory_capacity", "N/A"))
-            print("Hőmérséklet:", results.get("temperature", "N/A"))
-            print("-" * 40)
-
-            # 30 Hz-es frissítés
-            elapsed_time = time.time() - start_time
-            sleep_time = max(0, (1 / 30) - elapsed_time)
-            time.sleep(sleep_time)
-
-        client.close()
-
     except Exception as e:
-        print(f"Hiba történt: {str(e)}")
+        return {"error": str(e)}
+
+
+
+def geting_server_info():
+    try:
+        while True:
+            # Fetch server info
+            server_info = get_server_info(host, username, password)
+
+            # Print server info
+            for key, value in server_info.items():
+                print(f"{key}:\n{value}\n")
+
+            # Wait for 50 milliseconds (20 Hz rate)
+            time.sleep(0.05)
+
+            # Check for key press (stop if any key is pressed)
+            if keyboard.is_pressed('q'):  # Press 'q' to stop the loop
+                print("Stopping the information retrieval.")
+                break
+    except KeyboardInterrupt:
+        print("Program interrupted.")
+
+
+
 

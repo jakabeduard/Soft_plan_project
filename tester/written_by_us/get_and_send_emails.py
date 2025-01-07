@@ -1,5 +1,5 @@
 from written_by_us.imap import fetch_and_save_email
-from written_by_us.load_server_capacity import max_paragraphs_prev
+
 from written_by_us.random_generator import random_sentence, generate_paragraphs
 from written_by_us.smtp import send_email_with_attachment
 

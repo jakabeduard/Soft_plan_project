@@ -2,6 +2,7 @@
 import json
 import random
 
+from tester.written_by_us.monitoring import get_server_info, geting_server_info, set_ssh
 from written_by_us.api import  get_domanin_all, get_mailbox_all, delete_mailboxes, create_domain, \
     create_mailbox, set_host_and_headers_api
 from written_by_us.converter import extract_domain_names, extract_email_addresses
@@ -9,6 +10,7 @@ from written_by_us.create_testers import create_testers
 
 from written_by_us.imap import fetch_and_save_email, set_server_host
 from written_by_us.load_server_capacity import set_n_for_load, load_server_capacity
+
 from written_by_us.random_generator import random_paragraph, generate_paragraphs, random_sentence
 from written_by_us.reset_server import cleaning_server
 from written_by_us.smtp import send_email_with_attachment
@@ -21,6 +23,7 @@ if __name__ == '__main__':
 
     set_host_and_headers_api("E9A377-B0723B-53A5DC-D12E23-67E2F0","https://edu.mailserver.ro")
     set_server_host("edu.mailserver.ro")
+    set_ssh("admin", "01234")
     ###################################################################
     # result=cleaning_server()
     # print(json.dumps(result, indent=4))
@@ -47,20 +50,17 @@ if __name__ == '__main__':
     # print(json.dumps(result, indent=4))
 
 
-    #ssh cpu  lekerdezes
-    #
-    # get_server_info_ssh(
-    #     hostname="your.mailcow.server",  # Cseréld le a szerver IP címére vagy host nevére
-    #     username="your_username",  # SSH felhasználónév
-    #     password="your_password"  # SSH jelszó
-    # )
+
+
+    server_info = geting_server_info()
+    print(json.dumps(server_info, indent=4))
 
 
 
 
 
     # result=create_domain()  # Create a new domain
-    # print(json.dumps(result, indent=4))
+    # print(json.dumps(result, i ndent=4))
     #
     # for i in range(0, 4 + 1):
     #     create_mailbox(i)  # Create 'n' new mailboxes

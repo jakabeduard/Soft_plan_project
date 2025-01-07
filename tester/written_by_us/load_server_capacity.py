@@ -9,9 +9,7 @@ def set_n_for_load(n_email):
     global n_emails
     n_emails=n_email
 
-def max_paragraphs_prev():
-    maxparagraphs=max
-    return maxparagraphs
+
 
 
 def load_server_capacity(time_to_wait_s):
