@@ -3,6 +3,8 @@ import json
 import requests
 import urllib3
 
+from written_by_us.imap import fetch_and_save_email
+
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 
@@ -115,12 +117,12 @@ def create_domain():
         "mailboxes": 100,
         "defquota": 102040,
         "maxquota": 102040,
-        "quota": 102040,
+        "quota": 3000,
         "active": True,
         "rl_value": 10000,
         "rl_frame": "s",
-        "backupmx": False,
-        "relay_all_recipients": False,
+        "backupmx": True,
+        "relay_all_recipients": True,
         "restart_sogo": True
     }
 
@@ -148,9 +150,9 @@ def create_domain():
         "description": "test",
         "aliases": 400,
         "mailboxes": 100,
-        "defquota": 102040,
-        "maxquota": 102040,
-        "quota": 102040,
+        "defquota": 3072,
+        "maxquota": 10240,
+        "quota": 10240,
         "active": True,
         "rl_value": 10000,
         "rl_frame": "s",
@@ -176,14 +178,14 @@ def create_mailbox(i):
     CREATE_MAILBOX_BODY = {
         "local_part": f"tester{i}",
         "domain": "test.com",
-        "name": f"Teszter{i}",
+        "name": f"Teszter{i} Janos",
         "quota": 3072,
-        "password": "0123456789",
-        "password2": "0123456789",
+        "password": "123456",
+        "password2": "123456",
         "active": True,
         "force_pw_update": True,
-        "tls_enforce_in": True,
-        "tls_enforce_out": True,
+        "tls_enforce_in": False,
+        "tls_enforce_out": True
     }
 
     try:

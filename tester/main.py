@@ -1,15 +1,17 @@
 # This is a sample Python script.
 import json
 import random
+import threading
 
 from tester.written_by_us.monitoring import get_server_info, geting_server_info, set_ssh
 from written_by_us.api import  get_domanin_all, get_mailbox_all, delete_mailboxes, create_domain, \
     create_mailbox, set_host_and_headers_api
 from written_by_us.converter import extract_domain_names, extract_email_addresses
 from written_by_us.create_testers import create_testers
+from written_by_us.get_and_send_emails import max_paragraphs
 
 from written_by_us.imap import fetch_and_save_email, set_server_host
-from written_by_us.load_server_capacity import set_n_for_load, load_server_capacity
+from written_by_us.load_server_capacity import key_listener, load_server_capacity
 
 from written_by_us.random_generator import random_paragraph, generate_paragraphs, random_sentence
 from written_by_us.reset_server import cleaning_server
@@ -27,16 +29,24 @@ if __name__ == '__main__':
     ###################################################################
     # result=cleaning_server()
     # print(json.dumps(result, indent=4))
-    ##########################################
-    #n=15
-    #set_n_for_load(n)
+    # #########################################
+    # n=6
+    # set_n_for_load(n)
+    # result=create_mailbox(456)
+    # print(json.dumps(result, indent=4))
+    # set_n_for_load(n)
     # result = create_testers(n)
     # print(json.dumps(result, indent=4))
-    ####################################################
-    #max_paragraphs(15)
-    #load_server_capacity(60)
-    ######################################
+    # ###################################################
+    #
+    max_paragraphs(15)
+    # result=load_server_capacity(2)
+    # print(json.dumps(result, indent=4))
+    # #####################################
+    listener_thread = threading.Thread(target=key_listener)
+    listener_thread.start()
 
+    load_server_capacity(2,6)
 
     # sender_email = "a@alma.ro"
     # recipient_email = "b@alma.ro"
@@ -52,8 +62,8 @@ if __name__ == '__main__':
 
 
 
-    server_info = geting_server_info()
-    print(json.dumps(server_info, indent=4))
+    # server_info = geting_server_info()
+    # print(json.dumps(server_info, indent=4))
 
 
 

@@ -54,13 +54,13 @@ from email import encoders
 # except Exception as e:
 #     print(f"Error: {e}")
 
-def set_server_host(host_edu_mailserver_ro):
-    global hostv3
-    hostv3=host_edu_mailserver_ro
+# def set_server_host(host_edu_mailserver_ro):
+#     global hostv3
+#     hostv3=host_edu_mailserver_ro
 
 
 def send_email_with_attachment(sender_email, recipient_email, subject, body, file_path):
-    smtp_server = hostv3  # Gmail SMTP server
+    smtp_server = "edu.mailserver.ro" # Gmail SMTP server
     smtp_port = 587  # Standard port for STARTTLS
     sender_password = "0123456789"  # Use an app-specific password if 2FA is enabled
 
