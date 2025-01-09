@@ -55,7 +55,7 @@ def load_server_capacity(time_to_wait_s, n_emails):
         activ_emails = random_number(1, int(n_emails / 2))
 
         # Meghívok max n/2 email felhasználót, hogy küldjenek emailt a másik n/2-nek
-        for i in range(12 // 4):  # n/2-től fut a ciklus
+        for i in range(activ_emails // 2):  # n/2-től fut a ciklus
             print("Üdvözöllek!")
             # kuldok szama
             sender_num = random_number(0, n_emails)

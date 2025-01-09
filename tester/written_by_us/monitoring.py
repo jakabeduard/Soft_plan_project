@@ -54,7 +54,7 @@ def get_server_info(host, username, password):
 
 
 
-def geting_server_info():
+def getting_server_info():
     try:
         while True:
             # Fetch server info
@@ -75,5 +75,44 @@ def geting_server_info():
         print("Program interrupted.")
 
 
+def get_htop_output():
+    try:
+        # Create SSH client
+        ssh = paramiko.SSHClient()
+        ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+
+        # Connect to the server
+        ssh.connect(host, username=username, password=password)
+
+        # Execute the 'top' command (htop requires a TTY, so use 'top' for better results)
+        stdin, stdout, stderr = ssh.exec_command("top -b -n 1")
+
+        # Read the output
+        output = stdout.read().decode()
+
+        # Close the connection
+        ssh.close()
+
+        return output
+    except Exception as e:
+        return str(e)
 
 
+def geting_htop_output():
+    try:
+        while True:
+            # Fetch server info
+            server_info = get_htop_output()
+
+            # Print server info directly
+            print(server_info)
+
+            # Wait for 50 milliseconds (20 Hz rate)
+            time.sleep(0.05)
+
+            # Check for key press (stop if any key is pressed)
+            if keyboard.is_pressed('q'):  # Press 'q' to stop the loop
+                print("Stopping the information retrieval.")
+                break
+    except KeyboardInterrupt:
+        print("Program interrupted.")
