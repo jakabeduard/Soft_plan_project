@@ -6,9 +6,9 @@ from written_by_us.converter import extract_domain_names, extract_email_addresse
 
 
 
-def cleaning_server():
-    result = get_domanin_all()
-    result2 = get_mailbox_all()
+def cleaning_server(host, api_key):
+    result = get_domanin_all(host, api_key)
+    result2 = get_mailbox_all(host, api_key)
     print(json.dumps(result, indent=4))
     print(json.dumps(result2, indent=4))
     if result2:
@@ -17,7 +17,7 @@ def cleaning_server():
         print("Extracted email addresses:", email_list)
 
         # 3. Delete all mailboxes
-        delete_mailboxes(email_list)
+        delete_mailboxes(email_list, host, api_key)
     else:
         print("No mailboxes found, skipping mailbox deletion.")
 
@@ -27,6 +27,6 @@ def cleaning_server():
         print("Extracted domains:", domains)
 
         # 3. Delete all domains
-        delete_domains(domains)
+        delete_domains(domains, host, api_key)
     else:
         print("No domains found, skipping domain deletion.")

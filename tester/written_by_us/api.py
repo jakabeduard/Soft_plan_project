@@ -13,20 +13,17 @@ urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 #     "X-API-Key": "E9A377-B0723B-53A5DC-D12E23-67E2F0",
 #     "Content-Type": "application/json"
 # }
-host = ""
-headers = {}
+# host = ""
+# headers = {}
 
-def set_host_and_headers_api(api_key, host_url):
-    """Beállítja a host és a headers globális változókat."""
-    global headers, host
-    host = host_url
-    headers = {
-        "X-API-Key": api_key,
-        "Content-Type": "application/json"
-    }
+# def set_host_and_headers_api(api_key, host_url):
+#     """Beállítja a host és a headers globális változókat."""
+#     global headers, host
+#     host = host_url
+#     headers = { "X-API-Key": api_key, "Content-Type": "application/json"}
 
-def get_domanin_all():
-    # URL_GET_ALL_DOMAIN = "https://edu.mailserver.ro/api/v1/get/domain/all"
+def get_domanin_all(host, api_key):
+    headers = {"X-API-Key": api_key, "Content-Type": "application/json"}
     URL_GET_ALL_DOMAIN = f"{host}/api/v1/get/domain/all"
     try:
         response = requests.get(URL_GET_ALL_DOMAIN , headers=headers, verify=False)
@@ -36,8 +33,8 @@ def get_domanin_all():
     except requests.exceptions.RequestException as e:
         print(f"An error occurred: {e}")
 
-def get_mailbox_all():
-    # URL_GET_ALL_MAILBOX = "https://edu.mailserver.ro/api/v1/get/mailbox/all"
+def get_mailbox_all(host, api_key):
+    headers = {"X-API-Key": api_key, "Content-Type": "application/json"}
     URL_GET_ALL_MAILBOX = f"{host}/api/v1/get/mailbox/all"
     try:
         response = requests.get(URL_GET_ALL_MAILBOX, headers=headers, verify=False)
@@ -48,10 +45,10 @@ def get_mailbox_all():
         print(f"An error occurred: {e}")
 
 
-def delete_mailboxes(email_list):
+def delete_mailboxes(email_list,host, api_key):
     # Az API végpont
     URL_DELETE_EMAIL_ADDRESSES = f"{host}/api/v1/delete/mailbox"
-    # URL_DELETE_EMAIL_ADDRESSES = "https://edu.mailserver.ro/api/v1/delete/mailbox"
+    headers = {"X-API-Key": api_key, "Content-Type": "application/json"}
 
     try:
         # POST kérés küldése az email címek listájával
@@ -76,7 +73,8 @@ def delete_mailboxes(email_list):
 
 
 
-def delete_domains(domains):
+def delete_domains(domains,host, api_key):
+    headers = {"X-API-Key": api_key, "Content-Type": "application/json"}
     URL_DELETE_DOMAINS = f"{host}/api/v1/delete/domain"
     # URL_DELETE_DOMAINS = "https://edu.mailserver.ro/api/v1/delete/domain"
     print("URL:", URL_DELETE_DOMAINS)
@@ -106,55 +104,55 @@ def delete_domains(domains):
         print(f"An error occurred: {e}")
 
 
-def create_domain():
-    CREATE_DOMAIN_API_URL = "https://edu.mailserver.ro/api/v1/add/domain"
-    # CREATE_DOMAIN_API_URL = f"{host}/api/v1/add/domain"
-
-    CREATE_DOMAIN_BODY = {
-        "domain": "test.com",
-        "description": "test",
-        "aliases": 400,
-        "mailboxes": 100,
-        "defquota": 102040,
-        "maxquota": 102040,
-        "quota": 3000,
-        "active": True,
-        "rl_value": 10000,
-        "rl_frame": "s",
-        "backupmx": True,
-        "relay_all_recipients": True,
-        "restart_sogo": True
-    }
-
-
-    try:
-        response = requests.post(CREATE_DOMAIN_API_URL, headers=headers, json=CREATE_DOMAIN_BODY, verify=False)
-        response.raise_for_status()  # Raise an exception for HTTP errors
-        print("Domain added successfully.")
-        return response.json()
-    except requests.exceptions.RequestException as e:
-        print("Error adding domain:", e)
-        return None
-
-
-
+# def create_domain():
+#     CREATE_DOMAIN_API_URL = "https://edu.mailserver.ro/api/v1/add/domain"
+#     # CREATE_DOMAIN_API_URL = f"{host}/api/v1/add/domain"
+#
+#     CREATE_DOMAIN_BODY = {
+#         "domain": "test.com",
+#         "description": "test",
+#         "aliases": 400,
+#         "mailboxes": 100,
+#         "defquota": 102040,
+#         "maxquota": 102040,
+#         "quota": 3000,
+#         "active": True,
+#         "rl_value": 10000,
+#         "rl_frame": "s",
+#         "backupmx": True,
+#         "relay_all_recipients": True,
+#         "restart_sogo": True
+#     }
+#
+#
+#     try:
+#         response = requests.post(CREATE_DOMAIN_API_URL, headers=headers, json=CREATE_DOMAIN_BODY, verify=False)
+#         response.raise_for_status()  # Raise an exception for HTTP errors
+#         print("Domain added successfully.")
+#         return response.json()
+#     except requests.exceptions.RequestException as e:
+#         print("Error adding domain:", e)
+#         return None
+#
 
 
 
-def create_domain():
-   # CREATE_DOMAIN_API_URL = "https://edu.mailserver.ro/api/v1/add/domain"
+
+
+def create_domain(host, api_key):
+    headers = {"X-API-Key": api_key, "Content-Type": "application/json"}
     CREATE_DOMAIN_API_URL = f"{host}/api/v1/add/domain"
 
     CREATE_DOMAIN_BODY = {
         "domain": "test.com",
         "description": "test",
         "aliases": 400,
-        "mailboxes": 100,
+        "mailboxes": 1000,
         "defquota": 3072,
-        "maxquota": 10240,
-        "quota": 10240,
+        "maxquota": 110240,
+        "quota": 110240,
         "active": True,
-        "rl_value": 10000,
+        "rl_value": 999999999999,
         "rl_frame": "s",
         "backupmx": False,
         "relay_all_recipients": False,
@@ -173,13 +171,14 @@ def create_domain():
 
 
 
-def create_mailbox(i):
+def create_mailbox(i,host, api_key):
+    headers = {"X-API-Key": api_key, "Content-Type": "application/json"}
     CREATE_MAILBOX_API_URL = f"{host}/api/v1/add/mailbox"
     CREATE_MAILBOX_BODY = {
         "local_part": f"tester{i}",
         "domain": "test.com",
         "name": f"Teszter{i} Janos",
-        "quota": 3072,
+        "quota": 1000,
         "password": "123456",
         "password2": "123456",
         "active": True,
@@ -205,3 +204,28 @@ def create_mailbox(i):
 
 
 
+def update_mailbox_password(i, host, api_key):
+    headers = {"X-API-Key": api_key, "Content-Type": "application/json"}
+    UPDATE_MAILBOX_API_URL = f"{host}/api/v1/edit/mailbox"
+
+    UPDATE_MAILBOX_BODY = {
+        "items": f"tester{i}@test.com",
+        "attr": {
+            "password": "9876543210",
+            "password2": "9876543210",
+            "force_pw_update": "0"
+        }
+    }
+
+    try:
+        response = requests.post(UPDATE_MAILBOX_API_URL, headers=headers, json=UPDATE_MAILBOX_BODY, verify=False)
+        response.raise_for_status()  # HTTP hibák kezelése
+
+        if response.status_code == 200:
+            print(f"Password for tester{i}@test.com updated successfully.")
+            return response.json()
+        else:
+            print(f"Error: {response.status_code} - {response.text}")
+            return None
+    except requests.exceptions.RequestException as e:
+        print(f"Error updating password for tester{i}@test.com:", e)
