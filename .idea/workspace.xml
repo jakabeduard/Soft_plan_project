@@ -6,10 +6,14 @@
   <component name="ChangeListManager">
     <list default="true" id="9d014f5f-041f-4361-b3c6-65bca78f802b" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imap/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/imap/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tester/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/tester/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tester/written_by_us/api.py" beforeDir="false" afterPath="$PROJECT_DIR$/tester/written_by_us/api.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tester/written_by_us/create_testers.py" beforeDir="false" afterPath="$PROJECT_DIR$/tester/written_by_us/create_testers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tester/written_by_us/reset_server.py" beforeDir="false" afterPath="$PROJECT_DIR$/tester/written_by_us/reset_server.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tester/written_by_us/get_and_send_emails.py" beforeDir="false" afterPath="$PROJECT_DIR$/tester/written_by_us/get_and_send_emails.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tester/written_by_us/imap.py" beforeDir="false" afterPath="$PROJECT_DIR$/tester/written_by_us/imap.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tester/written_by_us/load_server_capacity.py" beforeDir="false" afterPath="$PROJECT_DIR$/tester/written_by_us/load_server_capacity.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tester/written_by_us/monitoring.py" beforeDir="false" afterPath="$PROJECT_DIR$/tester/written_by_us/monitoring.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tester/written_by_us/smtp.py" beforeDir="false" afterPath="$PROJECT_DIR$/tester/written_by_us/smtp.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,28 +38,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python.api.executor": "Run",
-    "Python.create_testers.executor": "Run",
-    "Python.get_and_send_emails.executor": "Run",
-    "Python.load_server_capacity.executor": "Run",
-    "Python.main.executor": "Run",
-    "Python.monitoring.executor": "Run",
-    "Python.reset_server.executor": "Run",
-    "Python.smtp.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "D:/proba",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "com.intellij.pycharm.community.ide.impl.configuration.PythonContentEntriesConfigurable",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python.api.executor&quot;: &quot;Run&quot;,
+    &quot;Python.create_testers.executor&quot;: &quot;Run&quot;,
+    &quot;Python.get_and_send_emails.executor&quot;: &quot;Run&quot;,
+    &quot;Python.load_server_capacity.executor&quot;: &quot;Run&quot;,
+    &quot;Python.main.executor&quot;: &quot;Run&quot;,
+    &quot;Python.monitoring.executor&quot;: &quot;Run&quot;,
+    &quot;Python.reset_server.executor&quot;: &quot;Run&quot;,
+    &quot;Python.smtp.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/proba&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.intellij.pycharm.community.ide.impl.configuration.PythonContentEntriesConfigurable&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -79,7 +83,9 @@
       <workItem from="1736322949072" duration="6618000" />
       <workItem from="1736421682810" duration="5593000" />
       <workItem from="1736431538961" duration="2535000" />
-      <workItem from="1739194444316" duration="13794000" />
+      <workItem from="1739194444316" duration="14106000" />
+      <workItem from="1739210757671" duration="93000" />
+      <workItem from="1739289624375" duration="9439000" />
     </task>
     <servers />
   </component>
@@ -88,10 +94,10 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Soft_plan_project$reset_server.coverage" NAME="reset_server Coverage Results" MODIFIED="1739199661570" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tester/written_by_us" />
-    <SUITE FILE_PATH="coverage/Soft_plan_project$get_and_send_emails.coverage" NAME="get_and_send_emails Coverage Results" MODIFIED="1736269425566" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tester/written_by_us" />
     <SUITE FILE_PATH="coverage/Soft_plan_project$monitoring.coverage" NAME="monitoring Coverage Results" MODIFIED="1736421794386" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tester/written_by_us" />
+    <SUITE FILE_PATH="coverage/Soft_plan_project$get_and_send_emails.coverage" NAME="get_and_send_emails Coverage Results" MODIFIED="1739295882118" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tester/written_by_us" />
     <SUITE FILE_PATH="coverage/Soft_plan_project$load_server_capacity.coverage" NAME="load_server_capacity Coverage Results" MODIFIED="1736422503252" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tester/written_by_us" />
-    <SUITE FILE_PATH="coverage/Soft_plan_project$main.coverage" NAME="main Coverage Results" MODIFIED="1739210327211" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tester" />
+    <SUITE FILE_PATH="coverage/Soft_plan_project$main.coverage" NAME="main Coverage Results" MODIFIED="1739298909641" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tester" />
     <SUITE FILE_PATH="coverage/Soft_plan_project$smtp.coverage" NAME="smtp Coverage Results" MODIFIED="1736321555816" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tester/written_by_us" />
     <SUITE FILE_PATH="coverage/Soft_plan_project$create_testers.coverage" NAME="create_testers Coverage Results" MODIFIED="1739201642111" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tester/written_by_us" />
     <SUITE FILE_PATH="coverage/Soft_plan_project$api.coverage" NAME="api Coverage Results" MODIFIED="1739201114472" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tester/written_by_us" />

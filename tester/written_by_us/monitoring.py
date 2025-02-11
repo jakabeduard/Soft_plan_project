@@ -4,19 +4,19 @@ import keyboard
 import paramiko
 
 
-host="edu.mailserver.ro"
-# username="admin"
-# password="01234"
-
-
-def set_ssh(user, pwd):
-    global username, password
-    username = user
-    password = pwd
-
-def set_server_host(host_edu_mailserver_ro):
-    global host
-    host = host_edu_mailserver_ro
+# host="edu.mailserver.ro"
+# # username="admin"
+# # password="01234"
+#
+#
+# def set_ssh(user, pwd):
+#     global username, password
+#     username = user
+#     password = pwd
+#
+# def set_server_host(host_edu_mailserver_ro):
+#     global host
+#     host = host_edu_mailserver_ro
 
 def get_server_info(host, username, password):
     try:
@@ -54,7 +54,7 @@ def get_server_info(host, username, password):
 
 
 
-def getting_server_info():
+def getting_server_info(host, username, password):
     try:
         while True:
             # Fetch server info

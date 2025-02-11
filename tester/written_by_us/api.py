@@ -1,26 +1,10 @@
-import json
 
 import requests
 import urllib3
 
-from written_by_us.imap import fetch_and_save_email
-
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 
-
-# headers = {
-#     "X-API-Key": "E9A377-B0723B-53A5DC-D12E23-67E2F0",
-#     "Content-Type": "application/json"
-# }
-# host = ""
-# headers = {}
-
-# def set_host_and_headers_api(api_key, host_url):
-#     """Beállítja a host és a headers globális változókat."""
-#     global headers, host
-#     host = host_url
-#     headers = { "X-API-Key": api_key, "Content-Type": "application/json"}
 
 def get_domanin_all(host, api_key):
     headers = {"X-API-Key": api_key, "Content-Type": "application/json"}
@@ -102,39 +86,6 @@ def delete_domains(domains,host, api_key):
 
     except requests.exceptions.RequestException as e:
         print(f"An error occurred: {e}")
-
-
-# def create_domain():
-#     CREATE_DOMAIN_API_URL = "https://edu.mailserver.ro/api/v1/add/domain"
-#     # CREATE_DOMAIN_API_URL = f"{host}/api/v1/add/domain"
-#
-#     CREATE_DOMAIN_BODY = {
-#         "domain": "test.com",
-#         "description": "test",
-#         "aliases": 400,
-#         "mailboxes": 100,
-#         "defquota": 102040,
-#         "maxquota": 102040,
-#         "quota": 3000,
-#         "active": True,
-#         "rl_value": 10000,
-#         "rl_frame": "s",
-#         "backupmx": True,
-#         "relay_all_recipients": True,
-#         "restart_sogo": True
-#     }
-#
-#
-#     try:
-#         response = requests.post(CREATE_DOMAIN_API_URL, headers=headers, json=CREATE_DOMAIN_BODY, verify=False)
-#         response.raise_for_status()  # Raise an exception for HTTP errors
-#         print("Domain added successfully.")
-#         return response.json()
-#     except requests.exceptions.RequestException as e:
-#         print("Error adding domain:", e)
-#         return None
-#
-
 
 
 

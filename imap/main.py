@@ -5,8 +5,8 @@ import os
 
 # Email account configuration
 imap_server = "edu.mailserver.ro"  # IMAP server address (e.g., Gmail's IMAP server)
-email_user = "janoska@edutus.mailserver.ro"
-email_pass = "012345"
+email_user = "tester10@test.com"
+email_pass = "9876543210"
 
 # Local directory to save emails and attachments
 save_directory = r"D:\janoskaemails"  # Replace with your desired directory
