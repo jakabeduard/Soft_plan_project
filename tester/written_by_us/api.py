@@ -128,8 +128,8 @@ def create_mailbox(i,host, api_key):
     CREATE_MAILBOX_BODY = {
         "local_part": f"tester{i}",
         "domain": "test.com",
-        "name": f"Teszter{i} Janos",
-        "quota": 1000,
+        "name": f"Teszter{i} Janoska",
+        "quota": 100,
         "password": "123456",
         "password2": "123456",
         "active": True,

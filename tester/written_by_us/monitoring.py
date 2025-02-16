@@ -1,118 +1,200 @@
+import psutil
+import subprocess
 import time
 
 import keyboard
 import paramiko
+import re
+import paramiko
 
+stop_thread = False
+def key_listener():
+    global stop_thread
+    input("Nyomj meg egy billentyűt a leállításhoz...\n")
+    stop_thread = True
 
-# host="edu.mailserver.ro"
-# # username="admin"
-# # password="01234"
+def getting_server_info( time_to_wait_s, hostname, username, password):
+    while not stop_thread:
+        # print("Végtelen ciklus fut...")
+        time.sleep(time_to_wait_s)
+
+        # result=get_remote_system_stats(hostname, username, password)
+        # print(result)
+        # result2=get_htop_output(hostname, username, password)
+        # print(result2)
+        result2=get_system_stats_and_htop_output(hostname, username, password)
+        print(result2)
+
+# def get_remote_system_stats(hostname, username, password):
+#     try:
+#         # SSH kapcsolat létrehozása
+#         ssh = paramiko.SSHClient()
+#         ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+#         ssh.connect(hostname, username=username, password=password)
+#
+#         # A szkript futtatása a távoli gépen
+#         stdin, stdout, stderr = ssh.exec_command("python3 -c 'import psutil; import subprocess; print(psutil.cpu_percent(interval=1, percpu=True)); print(psutil.getloadavg()); print(subprocess.check_output([\"sensors\"], text=True))'")
+#
+#         # Az eredmények kiolvasása
+#         output = stdout.read().decode().splitlines()
+#         cpu_percent = eval(output[0])
+#         cpu_load_avg = eval(output[1])
+#         sensors_output = "\n".join(output[2:])  # A teljes sensors kimenet
+#
+#         # CPU és adapter hőmérséklet kinyerése
+#         cpu_temp = "Hőmérséklet információ nem elérhető"
+#         adapter_temp = "Hőmérséklet információ nem elérhető"
+#         cpu_section = False
+#         adapter_section = False
+#
+#         for line in sensors_output.splitlines():
+#             if "cpu_thermal-virtual-0" in line:
+#                 cpu_section = True
+#                 adapter_section = False
+#             elif "rp1_adc-isa-0000" in line:
+#                 cpu_section = False
+#                 adapter_section = True
+#
+#             if cpu_section and "temp1" in line:
+#                 cpu_temp = line.split()[1]
+#             if adapter_section and "temp1" in line:
+#                 adapter_temp = line.split()[1]
+#
+#         # Eredmények összeállítása
+#         # stats = {
+#         #     "CPU terhelés (magonként) %-ban": cpu_percent,
+#         #     "CPU terhelés (átlag)": cpu_load_avg,
+#         #     "CPU hőmérséklet": cpu_temp,
+#         #     "Adapter hőmérséklet": adapter_temp,
+#         # }
+#         print(f"CPU hőmérséklet:{cpu_temp}, Adapter hőmérséklet:{adapter_temp}\nCPU terhelés (magonként) %-ban: {cpu_percent}\nCPU terhelés (átlag): {cpu_load_avg} ")
+#
+#         # return stats
+#
+#     except Exception as e:
+#         return f"Hiba történt: {e}"
+#     finally:
+#         ssh.close()
 #
 #
-# def set_ssh(user, pwd):
-#     global username, password
-#     username = user
-#     password = pwd
 #
-# def set_server_host(host_edu_mailserver_ro):
-#     global host
-#     host = host_edu_mailserver_ro
+#
+# def get_htop_output(host, username, password):
+#     try:
+#         # Create SSH client
+#         ssh = paramiko.SSHClient()
+#         ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+#
+#         # Connect to the server
+#         ssh.connect(host, username=username, password=password)
+#
+#         # Execute the 'top' command with -b and -n 1 flags
+#         stdin, stdout, stderr = ssh.exec_command("top -b -n 1")
+#
+#         # Read the output
+#         output = stdout.read().decode()
+#         # cpu_percent = psutil.cpu_percent(interval=1, percpu=True)
+#         # cpu_load_avg = psutil.getloadavg()
+#
+#         # Process and annotate relevant lines
+#         annotated_output = []
+#         in_table = False
+#         for line in output.splitlines():
+#             # if line.startswith("top -"):
+#             #     annotated_output.append(f"Rendszer állapot: {line}")
+#             # elif line.startswith("Tasks:"):
+#             #     annotated_output.append(f"Feladatok állapota: {line}")
+#             if line.startswith("%Cpu(s):"):
+#                 annotated_output.append(f"CPU használat: {line}")
+#             elif line.startswith("MiB Mem :"):
+#                 annotated_output.append(f"Memória használat: {line}")
+#             elif line.startswith("MiB Swap:"):
+#                 annotated_output.append(f"Swap memória állapot: {line}")
+#             # elif line.strip().startswith("PID"):
+#             #     in_table = True
+#             #     annotated_output.append("Folyamatok:")
+#             #     annotated_output.append(line)
+#             # elif in_table:
+#             #     annotated_output.append(line)
+#
+#         # Print annotated output
+#         print("\n".join(annotated_output))
+#
+#     except Exception as e:
+#         print(f"Hiba történt: {e}")
+#     finally:
+#         # Close the connection
+#         ssh.close()
+#
 
-def get_server_info(host, username, password):
-    try:
-        # Establish SSH connection
-        ssh = paramiko.SSHClient()
-        ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
-        ssh.connect(hostname=host, username=username, password=password)
+#
+#
 
-        # CPU Capacity
-        stdin, stdout, stderr = ssh.exec_command("lscpu | grep 'Model name\\|CPU(s)'")
-        cpu_info = stdout.read().decode().strip()
-
-        # CPU Temperature
-        stdin, stdout, stderr = ssh.exec_command("sensors | grep 'Package id 0:'")
-        cpu_temp = stdout.read().decode().strip()
-
-        # Check if CPU temperature is empty, then set a fallback message
-        if not cpu_temp:
-            cpu_temp = "Unable to retrieve CPU temperature. Ensure 'lm-sensors' is installed and configured."
-
-        # Memory Capacity
-        stdin, stdout, stderr = ssh.exec_command("free -h")
-        memory_info = stdout.read().decode().strip()
-
-        ssh.close()
-
-        # Return results
-        return {
-            "CPU Info": cpu_info,
-            "CPU Temperature": cpu_temp,
-            "Memory Info": memory_info
-        }
-    except Exception as e:
-        return {"error": str(e)}
-
-
-
-def getting_server_info(host, username, password):
-    try:
-        while True:
-            # Fetch server info
-            server_info = get_server_info(host, username, password)
-
-            # Print server info
-            for key, value in server_info.items():
-                print(f"{key}:\n{value}\n")
-
-            # Wait for 50 milliseconds (20 Hz rate)
-            time.sleep(0.05)
-
-            # Check for key press (stop if any key is pressed)
-            if keyboard.is_pressed('q'):  # Press 'q' to stop the loop
-                print("Stopping the information retrieval.")
-                break
-    except KeyboardInterrupt:
-        print("Program interrupted.")
-
-
-def get_htop_output():
+#
+def get_system_stats_and_htop_output(host, username, password):
     try:
         # Create SSH client
         ssh = paramiko.SSHClient()
         ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
-
-        # Connect to the server
         ssh.connect(host, username=username, password=password)
 
-        # Execute the 'top' command (htop requires a TTY, so use 'top' for better results)
+        # Execute the remote script to get system stats
+        stdin, stdout, stderr = ssh.exec_command(
+            "python3 -c 'import psutil; import subprocess; print(psutil.cpu_percent(interval=1, percpu=True)); print(psutil.getloadavg()); print(subprocess.check_output([\"sensors\"], text=True))'")
+
+        # Read and process the output
+        output = stdout.read().decode().splitlines()
+        cpu_percent = eval(output[0])
+        cpu_load_avg = eval(output[1])
+        sensors_output = "\n".join(output[2:])
+
+        # Extract CPU and adapter temperatures
+        cpu_temp = "Hőmérséklet információ nem elérhető"
+        adapter_temp = "Hőmérséklet információ nem elérhető"
+        cpu_section = False
+        adapter_section = False
+
+        for line in sensors_output.splitlines():
+            if "cpu_thermal-virtual-0" in line:
+                cpu_section = True
+                adapter_section = False
+            elif "rp1_adc-isa-0000" in line:
+                cpu_section = False
+                adapter_section = True
+
+            if cpu_section and "temp1" in line:
+                cpu_temp = line.split()[1]
+            if adapter_section and "temp1" in line:
+                adapter_temp = line.split()[1]
+
+        # Display system stats
+        print(f"CPU hőmérséklet: {cpu_temp}, Adapter hőmérséklet: {adapter_temp}")
+        print(f"CPU terhelés (magonként) %-ban: {cpu_percent}")
+        print(f"CPU terhelés (átlag): {cpu_load_avg}")
+
+        # Execute the 'top' command with -b and -n 1 flags
         stdin, stdout, stderr = ssh.exec_command("top -b -n 1")
 
         # Read the output
         output = stdout.read().decode()
 
+        # Process and annotate relevant lines
+        annotated_output = []
+        for line in output.splitlines():
+            if line.startswith("%Cpu(s):"):
+                annotated_output.append(f"CPU használat: {line}")
+            elif line.startswith("MiB Mem :"):
+                annotated_output.append(f"Memória használat: {line}")
+            elif line.startswith("MiB Swap:"):
+                annotated_output.append(f"Swap memória állapot: {line}")
+
+        # Print annotated output
+        print("\n".join(annotated_output))
+
+    except Exception as e:
+        print(f"Hiba történt: {e}")
+    finally:
         # Close the connection
         ssh.close()
 
-        return output
-    except Exception as e:
-        return str(e)
-
-
-def geting_htop_output():
-    try:
-        while True:
-            # Fetch server info
-            server_info = get_htop_output()
-
-            # Print server info directly
-            print(server_info)
-
-            # Wait for 50 milliseconds (20 Hz rate)
-            time.sleep(0.05)
-
-            # Check for key press (stop if any key is pressed)
-            if keyboard.is_pressed('q'):  # Press 'q' to stop the loop
-                print("Stopping the information retrieval.")
-                break
-    except KeyboardInterrupt:
-        print("Program interrupted.")
+#
