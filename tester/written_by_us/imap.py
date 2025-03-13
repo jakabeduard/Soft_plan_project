@@ -50,10 +50,10 @@ def fetch_and_save_email( receiver_number, host_sever):
 
             f.write(body if body else "No content available")
             print(f"Email mentve: ")
-            print(f"{safe_decode_header(email_message.get('To'))}- mentve, {safe_decode_header(email_message.get('From'))} feladotól ")
+            print(f"{safe_decode_header(email_message.get('To'))}- mentve, {safe_decode_header(email_message.get('From'))} feladotol ")
 
 
-            print(f"Tárgy:  {subject}")
+            print(f"Targy:  {subject}")
 
 
         # Save attachments
