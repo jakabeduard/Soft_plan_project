@@ -14,7 +14,7 @@ def load_server_capacity( n_emails,max_paragraphs,host_sever):
     while config.running:
 
         # print(f"{time_to_wait_s} másodperc eltelt!")
-        wait = random_number(1,200 )
+        wait = random_number(1,5 )
         print("Aktualis ido:", datetime.now().strftime("%Y-%m-%d %H:%M:%S.%f")[:-3])
         print(f"{wait}-masodperc  varakozas\n")
 

@@ -5,19 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9d014f5f-041f-4361-b3c6-65bca78f802b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/tester/written_by_us/config.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tester/written_by_us/results_counter.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tester/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/tester/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tester/out.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tester/output0.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tester/output7.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tester/output77.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tester/output7safsdkl.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tester/outputhh.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tester/outputhklo.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tester/written_by_us/load_server_capacity.py" beforeDir="false" afterPath="$PROJECT_DIR$/tester/written_by_us/load_server_capacity.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tester/written_by_us/monitoring.py" beforeDir="false" afterPath="$PROJECT_DIR$/tester/written_by_us/monitoring.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,7 +91,7 @@
       <workItem from="1741697930845" duration="6008000" />
       <workItem from="1741705825596" duration="10120000" />
       <workItem from="1741866205612" duration="3166000" />
-      <workItem from="1741870487030" duration="9637000" />
+      <workItem from="1741870487030" duration="10710000" />
     </task>
     <servers />
   </component>

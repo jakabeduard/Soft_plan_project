@@ -1,3 +1,4 @@
+import re
 
 
 def count_errors_in_log(log_text):
@@ -5,7 +6,7 @@ def count_errors_in_log(log_text):
         "too_many_connections": 0,
         # "none_lines": 0,
         # "high_threads": 0,
-        # "high_cpu_temp": 0,
+        "high_cpu_temp": 0,
         # "high_cpu_usage": 0
     }
 
@@ -28,10 +29,10 @@ def count_errors_in_log(log_text):
         #         errors["high_threads"] += 1
         #
         # # 4. CPU hőmérséklet figyelése
-        # temp_match = re.search(r"CPU hőmérséklet: \+(\d+\.\d+)°C", line)
-        # if temp_match and float(temp_match.group(1)) > 45.0:
-        #     errors["high_cpu_temp"] += 1
-        #
+        temp_match = re.search(r"CPU hőmérséklet: \+(\d+\.\d+)°C", line)
+        if temp_match and float(temp_match.group(1)) > 40.0:
+            errors["high_cpu_temp"] += 1
+
         # # 5. CPU magas használata
         # cpu_match = re.search(r"%Cpu\(s\):\s+(\d+\.\d+)\s+us", line)
         # if cpu_match and float(cpu_match.group(1)) > 80.0:
