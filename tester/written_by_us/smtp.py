@@ -1,4 +1,5 @@
-
+import datetime
+import random
 import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
@@ -23,7 +24,8 @@ def send_email_with_attachment(sender_number,receiver_number,  maxparagraphs, ho
         message.attach(MIMEText(generate_paragraphs(maxparagraphs), "plain"))
 
         # Attach file if path is provided
-        if file_path:
+
+        if file_path and random.choice([True, False]) :
             with open(file_path, "rb") as attachment:
                 # Add file as application/octet-stream
                 part = MIMEBase("application", "octet-stream")
@@ -44,7 +46,8 @@ def send_email_with_attachment(sender_number,receiver_number,  maxparagraphs, ho
             server.starttls()  # Upgrade the connection to secure
             server.login(f"tester{sender_number}@test.com", sender_password)
             server.sendmail(f"tester{sender_number}@test.com", f"tester{receiver_number}@test.com" , message.as_string())
-            print("Email with attachment sent successfully!")
+
+            print(f"Email Sikeresen elkuldve: tester{sender_number}@test.com-rol  tester{receiver_number}@test.com-ra !\n")
         # mail = imaplib.IMAP4_SSL('edu.mailserver.ro')  # Use the correct IMAP server address
         # mail.login(sender_email, sender_password)
         # mail.select('"Sent"')  # Gmail sent mail folder, adjust as per your service

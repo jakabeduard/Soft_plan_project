@@ -131,6 +131,141 @@ def getting_server_info( time_to_wait_s, hostname, username, password):
 #
 
 #
+# def get_system_stats_and_htop_output(host, username, password):
+#     try:
+#         # Create SSH client
+#         ssh = paramiko.SSHClient()
+#         ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+#         ssh.connect(host, username=username, password=password)
+#
+#         # Execute the remote script to get system stats
+#         stdin, stdout, stderr = ssh.exec_command(
+#             "python3 -c 'import psutil; import subprocess; print(psutil.cpu_percent(interval=1, percpu=True)); print(psutil.getloadavg()); print(subprocess.check_output([\"sensors\"], text=True))'")
+#
+#         # Read and process the output
+#         output = stdout.read().decode().splitlines()
+#         cpu_percent = eval(output[0])
+#         cpu_load_avg = eval(output[1])
+#         sensors_output = "\n".join(output[2:])
+#
+#         # Extract CPU and adapter temperatures
+#         cpu_temp = "Hőmérséklet információ nem elérhető"
+#         adapter_temp = "Hőmérséklet információ nem elérhető"
+#         cpu_section = False
+#         adapter_section = False
+#
+#         for line in sensors_output.splitlines():
+#             if "cpu_thermal-virtual-0" in line:
+#                 cpu_section = True
+#                 adapter_section = False
+#             elif "rp1_adc-isa-0000" in line:
+#                 cpu_section = False
+#                 adapter_section = True
+#
+#             if cpu_section and "temp1" in line:
+#                 cpu_temp = line.split()[1]
+#             if adapter_section and "temp1" in line:
+#                 adapter_temp = line.split()[1]
+#
+#         # Display system stats
+#         print(f"CPU hőmérséklet: {cpu_temp}, Adapter hőmérséklet: {adapter_temp}")
+#         print(f"CPU terhelés (magonként) %-ban: {cpu_percent}")
+#         print(f"CPU terhelés (átlag): {cpu_load_avg}")
+#
+#         # Execute the 'top' command with -b and -n 1 flags
+#         stdin, stdout, stderr = ssh.exec_command("top -b -n 1")
+#
+#         # Read the output
+#         output = stdout.read().decode()
+#
+#         # Process and annotate relevant lines
+#         annotated_output = []# kerlek ezt is  rakd  be az elozo for ciklusba  es   toltsed  bele a z eredmenyeket  egy tommbe es ugyan  ugy irasd ki mint az elozo  for ciklus eredmenyeit
+#         for line in output.splitlines():
+#             if line.startswith("%Cpu(s):"):
+#                 annotated_output.append(f"CPU használat: {line}")
+#             elif line.startswith("MiB Mem :"):
+#                 annotated_output.append(f"Memória használat: {line}")
+#             elif line.startswith("MiB Swap:"):
+#                 annotated_output.append(f"Swap memória állapot: {line}")
+#
+#         # Print annotated output
+#         print("\n".join(annotated_output))
+#
+#     except Exception as e:
+#         print(f"Hiba történt: {e}")
+#     finally:
+#         # Close the connection
+#         ssh.close()
+
+#
+# def get_system_stats_and_htop_output(host, username, password):
+#     try:
+#         # Create SSH client
+#         ssh = paramiko.SSHClient()
+#         ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+#         ssh.connect(host, username=username, password=password)
+#
+#         # Execute the remote script to get system stats
+#         stdin, stdout, stderr = ssh.exec_command(
+#             "python3 -c 'import psutil; import subprocess; "
+#             "print(psutil.cpu_percent(interval=1, percpu=True)); "
+#             "print(psutil.getloadavg()); "
+#             "print(subprocess.check_output([\"sensors\"], text=True))'"
+#         )
+#
+#         # Read and process the output
+#         output = stdout.read().decode().splitlines()
+#         cpu_percent = eval(output[0])
+#         cpu_load_avg = eval(output[1])
+#         sensors_output = "\n".join(output[2:])
+#
+#         # Extract CPU and adapter temperatures
+#         cpu_temp = "Hőmérséklet információ nem elérhető"
+#         adapter_temp = "Hőmérséklet információ nem elérhető"
+#         cpu_section = False
+#         adapter_section = False
+#
+#         annotated_output = []
+#
+#         # Execute the 'top' command with -b and -n 1 flags
+#         stdin, stdout, stderr = ssh.exec_command("top -b -n 1")
+#         top_output = stdout.read().decode()
+#
+#         for line in sensors_output.splitlines() + top_output.splitlines():
+#             if "cpu_thermal-virtual-0" in line:
+#                 cpu_section = True
+#                 adapter_section = False
+#             elif "rp1_adc-isa-0000" in line:
+#                 cpu_section = False
+#                 adapter_section = True
+#
+#             if cpu_section and "temp1" in line:
+#                 cpu_temp = line.split()[1]
+#             if adapter_section and "temp1" in line:
+#                 adapter_temp = line.split()[1]
+#
+#             if line.startswith("%Cpu(s):"):
+#                 annotated_output.append(f"CPU használat: {line}")
+#             elif line.startswith("MiB Mem :"):
+#                 annotated_output.append(f"Memória használat: {line}")
+#             elif line.startswith("MiB Swap:"):
+#                 annotated_output.append(f"Swap memória állapot: {line}")
+#
+#         # Print annotated output
+#         print("\n".join(annotated_output))# ezt  ugy ird ki mint a kovetkezoket
+#
+#         # Display system stats
+#         print(f"CPU hőmérséklet: {cpu_temp}, Adapter hőmérséklet: {adapter_temp}")#  pl itt ezek ( kulon valotozban statikusan
+#
+#         print(f"CPU terhelés (magonként) %-ban: {cpu_percent}")
+#         print(f"CPU terhelés (átlag): {cpu_load_avg}")
+#
+#     except Exception as e:
+#         print(f"Hiba történt: {e}")
+#     finally:
+#         # Close the connection
+#         ssh.close()
+
 def get_system_stats_and_htop_output(host, username, password):
     try:
         # Create SSH client
@@ -140,7 +275,11 @@ def get_system_stats_and_htop_output(host, username, password):
 
         # Execute the remote script to get system stats
         stdin, stdout, stderr = ssh.exec_command(
-            "python3 -c 'import psutil; import subprocess; print(psutil.cpu_percent(interval=1, percpu=True)); print(psutil.getloadavg()); print(subprocess.check_output([\"sensors\"], text=True))'")
+            "python3 -c 'import psutil; import subprocess; "
+            "print(psutil.cpu_percent(interval=1, percpu=True)); "
+            "print(psutil.getloadavg()); "
+            "print(subprocess.check_output([\"sensors\"], text=True))'"
+        )
 
         # Read and process the output
         output = stdout.read().decode().splitlines()
@@ -154,7 +293,14 @@ def get_system_stats_and_htop_output(host, username, password):
         cpu_section = False
         adapter_section = False
 
-        for line in sensors_output.splitlines():
+        # Execute the 'top' command with -b and -n 1 flags
+        stdin, stdout, stderr = ssh.exec_command("top -b -n 1")
+        top_output = stdout.read().decode()
+
+        # Annotated output list
+        annotated_output = []
+
+        for line in sensors_output.splitlines() + top_output.splitlines():
             if "cpu_thermal-virtual-0" in line:
                 cpu_section = True
                 adapter_section = False
@@ -167,20 +313,6 @@ def get_system_stats_and_htop_output(host, username, password):
             if adapter_section and "temp1" in line:
                 adapter_temp = line.split()[1]
 
-        # Display system stats
-        print(f"CPU hőmérséklet: {cpu_temp}, Adapter hőmérséklet: {adapter_temp}")
-        print(f"CPU terhelés (magonként) %-ban: {cpu_percent}")
-        print(f"CPU terhelés (átlag): {cpu_load_avg}")
-
-        # Execute the 'top' command with -b and -n 1 flags
-        stdin, stdout, stderr = ssh.exec_command("top -b -n 1")
-
-        # Read the output
-        output = stdout.read().decode()
-
-        # Process and annotate relevant lines
-        annotated_output = []
-        for line in output.splitlines():
             if line.startswith("%Cpu(s):"):
                 annotated_output.append(f"CPU használat: {line}")
             elif line.startswith("MiB Mem :"):
@@ -188,7 +320,17 @@ def get_system_stats_and_htop_output(host, username, password):
             elif line.startswith("MiB Swap:"):
                 annotated_output.append(f"Swap memória állapot: {line}")
 
-        # Print annotated output
+        # Static variable outputs
+        cpu_temp_output = f"CPU hőmérséklet: {cpu_temp}"
+        adapter_temp_output = f"Adapter hőmérséklet: {adapter_temp}"
+        cpu_usage_output = f"CPU terhelés (magonként) %-ban: {cpu_percent}"
+        # cpu_avg_load_output = f"CPU terhelés (átlag): {cpu_load_avg}"
+
+        # Print outputs
+        print(cpu_temp_output)
+        print(adapter_temp_output)
+        print(cpu_usage_output)
+        # print(cpu_avg_load_output)
         print("\n".join(annotated_output))
 
     except Exception as e:
@@ -196,5 +338,3 @@ def get_system_stats_and_htop_output(host, username, password):
     finally:
         # Close the connection
         ssh.close()
-
-#

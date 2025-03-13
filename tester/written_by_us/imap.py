@@ -10,8 +10,8 @@ def fetch_and_save_email( receiver_number, host_sever):
     # Fixed configurations
     imap_server = host_sever   # IMAP server address
     email_pass = "9876543210"  # Password for the email account
-    folders = ["INBOX", "Sent", "Trash", "Junk", "Drafts", "Archive"]  # Folders to synchronize
-
+    folders = ["INBOX", "Sent", "Trash", "Junk", "Drafts", "Archive"]  # Folders to synchronize: "INBOX", "Sent", "Trash", "Junk", "Drafts", "Archive"
+            # ["INBOX", "Sent", "Trash", "Junk", "Drafts", "Archive"]
     def safe_decode_header(header_value):
         """Safely decode an email header."""
         if header_value:
@@ -49,7 +49,12 @@ def fetch_and_save_email( receiver_number, host_sever):
                     body = body.decode(errors="ignore")
 
             f.write(body if body else "No content available")
-            print(f"Saved email: {subject}")
+            print(f"Email mentve: ")
+            print(f"{safe_decode_header(email_message.get('To'))}- mentve, {safe_decode_header(email_message.get('From'))} feladotól ")
+
+
+            print(f"Tárgy:  {subject}")
+
 
         # Save attachments
         for part in email_message.walk():
@@ -66,7 +71,7 @@ def fetch_and_save_email( receiver_number, host_sever):
         # Connect to the IMAP server
         mail = imaplib.IMAP4_SSL(imap_server)
         mail.login(f"tester{receiver_number}@test.com", email_pass)
-        print("Logged in successfully!")
+        # print("Logged in successfully!")
 
         # Process each folder
         for folder in folders:
@@ -77,7 +82,7 @@ def fetch_and_save_email( receiver_number, host_sever):
                 continue
 
             folder_name = folder.replace("[Gmail]/", "").replace("/", "_")  # Clean up folder name
-            print(f"Processing folder: {folder_name}")
+            # print(f"Processing folder: {folder_name}")
 
             # Search for all emails in the folder
             status, messages = mail.search(None, "ALL")
@@ -101,7 +106,7 @@ def fetch_and_save_email( receiver_number, host_sever):
 
         # Close the connection
         mail.logout()
-        print("Logged out successfully. All emails and attachments saved!")
+        print("\n")
 
     except Exception as e:
         print(f"Error: {e}")
