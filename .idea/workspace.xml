@@ -7,12 +7,7 @@
     <list default="true" id="9d014f5f-041f-4361-b3c6-65bca78f802b" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tester/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/tester/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tester/output200.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tester/output500.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tester/output66.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tester/outputteszt.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tester/written_by_us/load_server_capacity.py" beforeDir="false" afterPath="$PROJECT_DIR$/tester/written_by_us/load_server_capacity.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tester/written_by_us/monitoring.py" beforeDir="false" afterPath="$PROJECT_DIR$/tester/written_by_us/monitoring.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tester/output_20250322.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/tester/written_by_us/results_counter.py" beforeDir="false" afterPath="$PROJECT_DIR$/tester/written_by_us/results_counter.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -102,7 +97,7 @@
       <workItem from="1741866205612" duration="3166000" />
       <workItem from="1741870487030" duration="14114000" />
       <workItem from="1741897452157" duration="11936000" />
-      <workItem from="1742649910447" duration="11746000" />
+      <workItem from="1742649910447" duration="16070000" />
     </task>
     <servers />
   </component>
@@ -115,7 +110,7 @@
     <SUITE FILE_PATH="coverage/Soft_plan_project$monitoring.coverage" NAME="monitoring Coverage Results" MODIFIED="1742660117851" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tester/written_by_us" />
     <SUITE FILE_PATH="coverage/Soft_plan_project$results_counter.coverage" NAME="results_counter Coverage Results" MODIFIED="1741904217575" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tester/written_by_us" />
     <SUITE FILE_PATH="coverage/Soft_plan_project$load_server_capacity.coverage" NAME="load_server_capacity Coverage Results" MODIFIED="1741710620032" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tester/written_by_us" />
-    <SUITE FILE_PATH="coverage/Soft_plan_project$main.coverage" NAME="main Coverage Results" MODIFIED="1742661669202" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tester" />
+    <SUITE FILE_PATH="coverage/Soft_plan_project$main.coverage" NAME="main Coverage Results" MODIFIED="1742684048421" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tester" />
     <SUITE FILE_PATH="coverage/Soft_plan_project$smtp.coverage" NAME="smtp Coverage Results" MODIFIED="1736321555816" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tester/written_by_us" />
     <SUITE FILE_PATH="coverage/Soft_plan_project$create_testers.coverage" NAME="create_testers Coverage Results" MODIFIED="1739201642111" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tester/written_by_us" />
     <SUITE FILE_PATH="coverage/Soft_plan_project$api.coverage" NAME="api Coverage Results" MODIFIED="1739527365597" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tester/written_by_us" />

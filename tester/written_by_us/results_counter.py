@@ -74,43 +74,113 @@ import re
 from collections import defaultdict
 
 
+# def group_log_by_timestamp(filename):
+#     patterns = {
+#         "too many connections": 0,
+#         "Email Sikeresen elkuldve": 0,
+#         "Email mentve": 0,
+#         "CPU h\u0151m\u00e9rs\u00e9klet": 0,
+#         "CPU terhel\u00e9s": 0
+#     }
+#
+#     grouped_logs = defaultdict(lambda: patterns.copy())
+#
+#     try:
+#         with open(filename, 'r', encoding='latin-1', errors='ignore') as file:
+#             current_timestamp = None
+#
+#             for line in file:
+#                 timestamp_match = re.match(r"(\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}\.\d{3})", line)
+#                 cpu_temperature_match = re.search(r"CPU homerseklet: \+(\d+\.\d)°C", line)
+#                 cpu_utilization_match = re.match(r"CPU terheles \(ossz\):(\d+\.\d)%", line)
+#                 if timestamp_match:
+#                     current_timestamp = timestamp_match.group(1)
+#
+#                 for pattern in patterns.keys():
+#                     if re.search(pattern, line, re.IGNORECASE):
+#                         if current_timestamp:
+#                             grouped_logs[current_timestamp][pattern] += 1
+#
+#         # Kiírás rendezett formában
+#         print("A fájl összesen", sum(sum(d.values()) for d in grouped_logs.values()), "sort tartalmaz.")
+#         for pattern in patterns.keys():
+#             total_count = sum(group[pattern] for group in grouped_logs.values())
+#             print(f"A: '{pattern}' {total_count} sorban található meg.")
+#
+#         print("\nCsoportosított eredmények:")
+#         for timestamp, counts in sorted(grouped_logs.items()):
+#             print(f"{timestamp}")
+#             for pattern, count in counts.items():
+#                 if count > 0:
+#                     print(f"    A: '{pattern}' {count} alkalommal található meg.")
+#             print()
+#
+#     except FileNotFoundError:
+#         print(f"A(z) {filename} fájl nem található.")
+
 def group_log_by_timestamp(filename):
     patterns = {
         "too many connections": 0,
         "Email Sikeresen elkuldve": 0,
         "Email mentve": 0,
-        "CPU h\u0151m\u00e9rs\u00e9klet": 0,
-        "CPU terhel\u00e9s": 0
+        "CPU hőmérséklet": [],
+        "CPU terhelés": []
     }
 
-    grouped_logs = defaultdict(lambda: patterns.copy())
+    grouped_logs = defaultdict(lambda: {key: (0 if isinstance(val, int) else []) for key, val in patterns.items()})
 
     try:
         with open(filename, 'r', encoding='latin-1', errors='ignore') as file:
             current_timestamp = None
 
             for line in file:
+                # Időbélyeg keresése
                 timestamp_match = re.match(r"(\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}\.\d{3})", line)
                 if timestamp_match:
                     current_timestamp = timestamp_match.group(1)
 
+                # CPU hőmérséklet keresése
+                cpu_temperature_match = re.search(r"CPU homerseklet \+(\d+\.\d)°C", line)
+                if cpu_temperature_match and current_timestamp:
+                    grouped_logs[current_timestamp]["CPU homerseklet"].append(float(cpu_temperature_match.group(1)))
+
+                # CPU terhelés keresése
+                cpu_utilization_match = re.search(r"CPU terheles \(össz\): (\d+\.\d)%", line)
+                if cpu_utilization_match and current_timestamp:
+                    grouped_logs[current_timestamp]["CPU terheles"].append(float(cpu_utilization_match.group(1)))
+
+                # Egyéb minták keresése
                 for pattern in patterns.keys():
-                    if re.search(pattern, line, re.IGNORECASE):
+                    if pattern not in ["CPU homerseklet", "CPU terheles"] and re.search(pattern, line, re.IGNORECASE):
                         if current_timestamp:
                             grouped_logs[current_timestamp][pattern] += 1
 
         # Kiírás rendezett formában
-        print("A fájl összesen", sum(sum(d.values()) for d in grouped_logs.values()), "sort tartalmaz.")
+        print("A fájl összesen", sum(sum(len(v) if isinstance(v, list) else v for v in d.values()) for d in grouped_logs.values()), "sort tartalmaz.")
+
         for pattern in patterns.keys():
-            total_count = sum(group[pattern] for group in grouped_logs.values())
-            print(f"A: '{pattern}' {total_count} sorban található meg.")
+            if pattern in ["CPU hőmérséklet", "CPU terhelés"]:
+                total_values = [val for group in grouped_logs.values() for val in group[pattern]]
+                if total_values:
+                    avg_value = sum(total_values) / len(total_values)
+                    print(f"A '{pattern}' átlaga: {avg_value:.2f}")
+            else:
+                total_count = sum(group[pattern] for group in grouped_logs.values())
+                print(f"A '{pattern}' {total_count} sorban található meg.")
 
         print("\nCsoportosított eredmények:")
         for timestamp, counts in sorted(grouped_logs.items()):
             print(f"{timestamp}")
+
+            # Egyéb minták kiírása
             for pattern, count in counts.items():
-                if count > 0:
-                    print(f"    A: '{pattern}' {count} alkalommal található meg.")
+                if pattern in ["CPU hőmérséklet", "CPU terhelés"]:
+                    if count:  # Ha van érték
+                        avg_value = sum(count) / len(count) if count else 0
+                        print(f"    A '{pattern}' átlaga: {avg_value:.2f}")
+                elif count > 0:
+                    print(f"    A '{pattern}' {count} alkalommal található meg.")
+
             print()
 
     except FileNotFoundError:
