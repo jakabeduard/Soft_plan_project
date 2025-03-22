@@ -39,3 +39,34 @@ def count_errors_in_log(log_text):
         #     errors["high_cpu_usage"] += 1
 
     return errors
+
+
+def find_text_in_file(filename):
+    patterns = [
+        "too many connections",
+        "Email Sikeresen elkuldve",
+        "Email mentve",
+        "CPU homerseklet",
+        "CPU terheles"
+    ]
+
+    try:
+        with open(filename, 'r', encoding='latin-1', errors='ignore') as file:
+            lines = file.readlines()
+
+            print(f"A fájl {len(lines)} sort tartalmaz.")
+
+            for pattern in patterns:
+                matching_lines = [line.strip() for line in lines if
+                                  re.search(pattern.strip(), line.strip(), re.IGNORECASE)]
+                print(f"A: '{pattern}' {len(matching_lines)} sorban található meg.")
+
+                if not matching_lines:
+                    print("Nincsenek találatok.")
+
+
+    except FileNotFoundError:
+        print(f"A(z) {filename} fájl nem található.")
+
+
+

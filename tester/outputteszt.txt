@@ -3193,9 +3193,9 @@ Aktualis ido: 2025-03-13 18:44:33.480
 4-masodperc  varakozas
 
 Aktualis ido: 2025-03-13 18:44:33.480
-1-masodperc  varakoza 
+1-masodperc  varakoza 
 
-  Error: (421, b'4.7.0 edu.mailserver.ro Error: too many connections from 192.168.1.125')
+  Error: (421, b'4.7.0 edu.mailserver.ro Error: too many connections from 192.168.1.125')
 2025-03-13 18:44:37.386
           73- Kuldo 
 
@@ -3713,7 +3713,7 @@ Error: (421, b'4.7.0 edu.mailserver.ro Error: too many connections from 192.168.
 2025-03-13 18:44:38.239
 Error: (421, b'4.7.0 edu.mailserver.ro Error: too many connections from 192.168.1.125')
 2025-03-13 18:44:38.239
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         Email Sikeresen elkuldve: tester468@test.com-rol  tester739@test.com-ra !
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         Email Sikeresen elkuldve: tester468@test.com-rol  tester739@test.com-ra !
 
           847- Kuldo 
 
@@ -4419,10 +4419,8 @@ Error: (421, b'4.7.0 edu.mailserver.ro Error: too many connections from 192.168.
 
                       751- Fogado
 
-2025-03-13 18:44:39.636
-Error: (421, b'4.7.0 edu.mailserver.ro Error: too many connections from 192.168.1.125')
-2025-03-13 18:44:39.655
-Error: (421, b'4.7.0 edu.mailserver.ro Error: too many connections from 192.168.1.125')
+
+
 2025-03-13 18:44:39.655
 Error: (421, b'4.7.0 edu.mailserver.ro Error: too many connections from 192.168.1.125')
 2025-03-13 18:44:39.707
@@ -4927,7 +4925,7 @@ Saved attachment: IMG_20241026_200124_7.jpg
 Saved attachment: IMG_20241026_200124_7.jpg
 Email mentve: 
 tester332@test.com- mentve, tester325@test.com feladotol 
-e,<   ae,<  pae,<  ‡ae,<  Pbe,<  ¿be,<  0ce,<  †ce,<  de,<  Äde,<  de,<  `ee,<  –ee,<  @fe,<  ∞fe,<   ge,<  êge,<   he,<  phe,<  ‡he,<  Pie,<  ¿ie,<  0je,<  †je,<  ke,<  Äke,<  ke,<  `le,<  –le,<  @me,<  ∞me,<   ne,<  êne,<   oe,<  poe,<  ‡oe,<  Ppe,<  ¿pe,<  0qe,<  †qe,<  re,<  Äre,<  re,<  `se,<  –se,<  @te,<  ∞te,<   ue,<  êue,<   ve,<  pve,<  ‡ve,<  Pwe,<  ¿we,<  0xe,<  †xe,<  ‡h§+<  Pi§+<  ¿i§+<  0j§+<  †j§+<  k§+<  Äk§+<  k§+<  `l§+<  –l§+<  @m§+<  ∞m§+<   n§+<  ên§+<   o§+<  po§+<  ‡o§+<  Pp§+<  ¿p§+<  0q§+<  †q§+<  r§+<  Är§+<  r§+<  `s§+<  –s§+<  @t§+<  ∞t§+<   u§+<  êu§+<   v§+<  pv§+<  ‡v§+<  Pw§+<  ¿w§+<  0x§+<  †x§+<  y§+<  Äy§+<  y§+<  `z§+<  –z§+<  @{§+<  ∞{§+<   |§+<  ê|§+<   }§+<  p}§+<  ‡}§+<  P~§+<  ¿~§+<  0§+<  0@§+<  †@§+<  A§+<  ÄA§+<  A§+<  `B§+<  –B§+<  @C§+<  ∞C§+<   D§+<  êD§+<   E§+<  pE§+<  ‡E§+<  PF§+<  ¿F§+<  0G§+<  †G§+<  H§+<  ÄH§+<  H§+<  `I§+<  –I§+<  @J§+<  ∞J§+<   K§+<  êK§+<   L§+<  pL§+<  ‡L§+<  PM§+<  ¿M§+<  0N§+<  †N§+<  O§+<  ÄO§+<  O§+<  `P§+<  –P§+<  @Q§+<  ∞Q§+<   R§+<  êR§+<   S§+<  pS§+<  ‡S§+<  PT§+<  ¿T§+<  0U§+<  †U§+<  V§+<  ÄV§+<  V§+<  `W§+<  –W§+<  @X§+<  ∞X§+<   Y§+<  êY§+<   Z§+<  pZ§+<  ‡Z§+<  P[§+<  ¿[§+<  0\§+<  †\§+<  ]§+<  Ä]§+<  ]§+<  `^§+<  –^§+<  @_§+<Targy:  tenger ajt√≥ kert √©let √©let foly√≥ kutya alma.
+e,<   ae,<  pae,<  ‡ae,<  Pbe,<  ¿be,<  0ce,<  †ce,<  de,<  Äde,<  de,<  `ee,<  –ee,<  @fe,<  ∞fe,<   ge,<  êge,<   he,<  phe,<  ‡he,<  Pie,<  ¿ie,<  0je,<  †je,<  ke,<  Äke,<  ke,<  `le,<  –le,<  @me,<  ∞me,<   ne,<  êne,<   oe,<  poe,<  ‡oe,<  Ppe,<  ¿pe,<  0qe,<  †qe,<  re,<  Äre,<  re,<  `se,<  –se,<  @te,<  ∞te,<   ue,<  êue,<   ve,<  pve,<  ‡ve,<  Pwe,<  ¿we,<  0xe,<  †xe,<  ‡h§+<  Pi§+<  ¿i§+<  0j§+<  †j§+<  k§+<  Äk§+<  k§+<  `l§+<  –l§+<  @m§+<  ∞m§+<   n§+<  ên§+<   o§+<  po§+<  ‡o§+<  Pp§+<  ¿p§+<  0q§+<  †q§+<  r§+<  Är§+<  r§+<  `s§+<  –s§+<  @t§+<  ∞t§+<   u§+<  êu§+<   v§+<  pv§+<  ‡v§+<  Pw§+<  ¿w§+<  0x§+<  †x§+<  y§+<  Äy§+<  y§+<  `z§+<  –z§+<  @{§+<  ∞{§+<   |§+<  ê|§+<   }§+<  p}§+<  ‡}§+<  P~§+<  ¿~§+<  0§+<  0@§+<  †@§+<  A§+<  ÄA§+<  A§+<  `B§+<  –B§+<  @C§+<  ∞C§+<   D§+<  êD§+<   E§+<  pE§+<  ‡E§+<  PF§+<  ¿F§+<  0G§+<  †G§+<  H§+<  ÄH§+<  H§+<  `I§+<  –I§+<  @J§+<  ∞J§+<   K§+<  êK§+<   L§+<  pL§+<  ‡L§+<  PM§+<  ¿M§+<  0N§+<  †N§+<  O§+<  ÄO§+<  O§+<  `P§+<  –P§+<  @Q§+<  ∞Q§+<   R§+<  êR§+<   S§+<  pS§+<  ‡S§+<  PT§+<  ¿T§+<  0U§+<  †U§+<  V§+<  ÄV§+<  V§+<  `W§+<  –W§+<  @X§+<  ∞X§+<   Y§+<  êY§+<   Z§+<  pZ§+<  ‡Z§+<  P[§+<  ¿[§+<  0\§+<  †\§+<  ]§+<  Ä]§+<  ]§+<  `^§+<  –^§+<  @_§+<Targy:  tenger ajt√≥ kert √©let √©let foly√≥ kutya alma.
 Email mentve: 
 tester132@test.com- mentve, tester311@test.com feladotol 
 Targy:  k√∂nyv erd≈ë l√°mpa mad√°r alma.
@@ -8832,7 +8830,7 @@ tester45@test.com- mentve, tester40@test.com feladotol
 ====3675602621792603025==--
 )
 CBPI8 OK Fetch completed (1.594 + 0.489 + 0.023 secs).
-ëUÆ#çÿÄôê+?˘≈_KhÔÓUoP£8˝|v™ç∂¨¸˙”>8|häH◊YY4›´±ë†˝‰ß n'ÅÇy‡z◊9Ò‡˜çkù?C‘?“4÷πÃåˆÈ¥cÔÀ‹:úpqÕ~âxü¬n©m#^Y€Õ¥7D =>µœ√€SwÌF|#ÜÔLæ‘gçö‰HêÖ(Gcå‡ÙÈ◊5™k†„u™>ƒ˝ï>[|¯O¶ËvØ$ãe´8Mß>£‹Ù¸Ω+‘√4ê¸ÖãnQñÍ√ˇ Q˘VFÜÕwßC#+~¸µ?ó5†$9?ƒÙ<úˇ Targy:  sz√≠v id≈ë tenger kutya v√≠z t√∂rt√©net k√∂nyv √©let csillag ajt√≥.
+ëUÆ#çÿÄôê+?˘≈_KhÔÓUoP£8˝|v™ç∂¨¸˙”>8|häH◊YY4›´±ë†˝‰ß n'ÅÇy‡z◊9Ò‡˜çkù?C‘?“4÷πÃåˆÈ¥cÔÀ‹:úpqÕ~âxü¬n©m#^Y€Õ¥7D =>µœ√€SwÌF|#ÜÔLæ‘gçö‰HêÖ(Gcå‡ÙÈ◊5™k†„u™>ƒ˝ï>[|¯O¶ËvØ$ãe´8Mß>£‹Ù¸Ω+‘√4ê¸ÖãnQñÍ√ˇ Q˘VFÜÕwßC#+~¸µ?ó5†$9?ƒÙ<úˇ Targy:  sz√≠v id≈ë tenger kutya v√≠z t√∂rt√©net k√∂nyv √©let csillag ajt√≥.
 Saved attachment: IMG_20241026_200124_7.jpg
 Saved attachment: IMG_20241026_200124_7.jpg
 Saved attachment: IMG_20241026_200124_7.jpg
@@ -9911,7 +9909,7 @@ Email mentve:
 tester528@test.com- mentve, tester686@test.com feladotol 
 Targy:  sz√≠v csoda nap ajt√≥ t√∂rt√©net alma nap mad√°r.
 Email mentve: 
-X   o   g   Y   3   N   vtester966@test.com- mentve, tester751@test.com feladotol 
+X   o   g   Y   3   N   vtester966@test.com- mentve, tester751@test.com feladotol 
 Targy:  id≈ë v√≠z vir√°g sz√≠v erd≈ë asztal erd≈ë csoda foly√≥.
 2025-03-13 18:45:26.764
 Saved attachment: IMG_20241026_200124_7.jpg
@@ -10168,8 +10166,8 @@ Targy:  alma h√≥ mosoly mosoly k√©p nap sz√≠n utca.
 Saved attachment: IMG_20241026_200124_7.jpg
 Email mentve: 
 tester734@test.com- mentve, tester813@test.com feladotol 
-t   Z   C   B   m   b   2   x   5   w   7   M   g   Y   X   N   6   d   G   F   s   I   G   z   D   o   W   1   w      
-   Y   S   B   o   Z   W   d   5   I   H   N   6   w   6   l   s   I   H   T   D   t   n   J   0   w   6Targy:  aut√≥ mese k√∂nyv.
+t   Z   C   B   m   b   2   x   5   w   7   M   g   Y   X   N   6   d   G   F   s   I   G   z   D   o   W   1   w      
+   Y   S   B   o   Z   W   d   5   I   H   N   6   w   6   l   s   I   H   T   D   t   n   J   0   w   6Targy:  aut√≥ mese k√∂nyv.
 
 
 Aktualis ido: 2025-03-13 18:45:28.650
@@ -11187,7 +11185,7 @@ Email Sikeresen elkuldve: tester103@test.com-rol  tester713@test.com-ra !
 2025-03-13 18:45:36.424
 Email Sikeresen elkuldve: tester630@test.com-rol  tester398@test.com-ra !
 
-  F   y   I   G   F   i   b   G   F   r   I   G   F   i   b   G   F   r   I   G   1   lEmail Sikeresen elkuldve: tester966@test.com-rol  tester154@test.com-ra !
+  F   y   I   G   F   i   b   G   F   r   I   G   F   i   b   G   F   r   I   G   1   lEmail Sikeresen elkuldve: tester966@test.com-rol  tester154@test.com-ra !
 
 Email mentve: 
 tester383@test.com- mentve, tester224@test.com feladotol 
@@ -11721,7 +11719,7 @@ tester282@test.com- mentve, tester122@test.com feladotol
 Targy:  ajt√≥ ajt√≥ h√≠d h√°z l√°mpa mez≈ë t√©r k√©p sz√≠n.
 Email mentve: 
 tester469@test.com- mentve, tester749@test.com feladotol 
-#<  0Ω"'<  `'Õ#<  0ø"'<  `'Õ#<  ∞µ"'<  `'Õ#<  ∞ª"'<  `'Õ#<  ∞@%'<  `'Õ#<  0A%'<  `'Õ#<  0B%'Targy:  t√©rk√©p √©let tenger.
+#<  0Ω"'<  `'Õ#<  0ø"'<  `'Õ#<  ∞µ"'<  `'Õ#<  ∞ª"'<  `'Õ#<  ∞@%'<  `'Õ#<  0A%'<  `'Õ#<  0B%'Targy:  t√©rk√©p √©let tenger.
 Email mentve: 
 tester883@test.com- mentve, tester513@test.com feladotol 
 Targy:  v√≠z tenger mez≈ë √©let t√©r hold.
@@ -11956,7 +11954,7 @@ Aktualis ido: 2025-03-13 18:45:42.686
 
 
 
-`'Õ#<  ∞w≠'<  `'Õ#<  0x≠'<  `'Õ#<  ∞x≠'<Aktualis ido: 2025-03-13 18:45:42.687
+`'Õ#<  ∞w≠'<  `'Õ#<  0x≠'<  `'Õ#<  ∞x≠'<Aktualis ido: 2025-03-13 18:45:42.687
 1-masodperc  varakozas
 
 Email mentve: 
@@ -12761,8 +12759,8 @@ Email Sikeresen elkuldve: tester459@test.com-rol  tester27@test.com-ra !
 Email mentve: 
 tester553@test.com- mentve, tester406@test.com feladotol 
 Targy:  bar√°t mosoly vir√°g.
-  =   =   -   -      
-   =   =   =   =   =   	  	Gíw PÉ>.<  PÔ8 <  =   =   =   1   0   1   2   5   8   2   6   6   0   0   2   4   9   6          922- Kuldo 
+  =   =   -   -      
+   =   =   =   =   =   	  	Gíw PÉ>.<  PÔ8 <  =   =   =   1   0   1   2   5   8   2   6   6   0   0   2   4   9   6          922- Kuldo 
 
                       838- Fogado
 
@@ -17591,8 +17589,8 @@ Targy:  t√≥ mez≈ë t√©rk√©p t√©rk√©p.
 Email mentve: 
 tester674@test.com- mentve, tester685@test.com feladotol 
 Targy:  aut√≥ k√©p sz√≠v csillag mez≈ë kutya t√∂rt√©net sz√©l id≈ë.
-   B   h   a   n   T   D   s   y   B   r   Z   X   J   0      
-   I   H   T   D   q   X   I   g   w   6   l   s   Z   X   Q   g  Saved attachment: IMG_20241026_200124_7.jpg
+   B   h   a   n   T   D   s   y   B   r   Z   X   J   0      
+   I   H   T   D   q   X   I   g   w   6   l   s   Z   X   Q   g  Saved attachment: IMG_20241026_200124_7.jpg
 Saved attachment: IMG_20241026_200124_7.jpg
 Email mentve: 
 tester894@test.com- mentve, tester284@test.com feladotol 
@@ -17813,7 +17811,7 @@ tester466@test.com- mentve, tester836@test.com feladotol
 Targy:  hold mese v√°r utca v√°r √©let.
 Email mentve: 
 tester404@test.com- mentve, tester756@test.com feladotol 
-  S   B   o   w   6   1   k   I   H   b   D  Targy:  v√≠z szerelem mez≈ë erd≈ë k√©p t√©r foly√≥.
+  S   B   o   w   6   1   k   I   H   b   D  Targy:  v√≠z szerelem mez≈ë erd≈ë k√©p t√©r foly√≥.
 Saved attachment: IMG_20241026_200124_7.jpg
 Saved attachment: IMG_20241026_200124_7.jpg
 Email mentve: 
@@ -18794,7 +18792,7 @@ tester503@test.com- mentve, tester648@test.com feladotol
 Targy:  mese hold v√°r t√≥ utca mese t√©r v√≠z hold.
 Email mentve: 
 tester475@test.com- mentve, tester794@test.com feladotol 
- I   G   v   D   q   X   A   g   c   3   r   D   r   X   Y   u   I   G   F   i   b   G   F   r   I   G   F   1   d   M   O   z   I   G   J   h   c   s Targy:  v√°r csillag k√∂nyv utca ajt√≥.
+ I   G   v   D   q   X   A   g   c   3   r   D   r   X   Y   u   I   G   F   i   b   G   F   r   I   G   F   1   d   M   O   z   I   G   J   h   c   s Targy:  v√°r csillag k√∂nyv utca ajt√≥.
 Email mentve: 
 tester440@test.com- mentve, tester210@test.com feladotol 
 Targy:  k√∂nyv t√©rk√©p utca h√≥ t√©r.
@@ -22746,7 +22744,7 @@ Saved attachment: IMG_20241026_200124_7.jpg
 Email mentve: 
 tester992@test.com- mentve, tester723@test.com feladotol 
 Targy:  tenger sz√≠v csillag v√≠z.
-û§ÿÙ¥f›∏Æ 	”•*ÑÖv0‹IÀˇ .ˇ ˛∫}≤}∂%˘á›Ob˝fòU^RhmŸ;O›”‘ëÇ5ä}¨	åçƒ„üˇ ]2πv˝”Úì∆OJôã…8ê7(7„=˝Tﬂ;œS˜õæ[ø”“™.Ïÿ≤6÷Âòeè¯“Fån◊^H–}iLÚm?*Ìe Saved attachment: IMG_20241026_200124_7.jpg
+û§ÿÙ¥f›∏Æ 	”•*ÑÖv0‹IÀˇ .ˇ ˛∫}≤}∂%˘á›Ob˝fòU^RhmŸ;O›”‘ëÇ5ä}¨	åçƒ„üˇ ]2πv˝”Úì∆OJôã…8ê7(7„=˝Tﬂ;œS˜õæ[ø”“™.Ïÿ≤6÷Âòeè¯“Fån◊^H–}iLÚm?*Ìe Saved attachment: IMG_20241026_200124_7.jpg
 Email mentve: 
 tester189@test.com- mentve, tester14@test.com feladotol 
 Targy:  szerelem hold t√≥ ajt√≥ mese.
@@ -23256,7 +23254,7 @@ Email mentve:
 tester691@test.com- mentve, tester21@test.com feladotol 
 Targy:  kert zene k√©p h√≠d szerelem √©let k√©p t√©r kert aut√≥.
 Email mentve: 
-Õ#<  0Úß$<  `'Õ#<  ∞Úß$<  `'Õ#<  0Ûß$<  `'Õ#<  0Ùß$<  `'Õ#<  ∞Ôß$<tester516@test.com- mentve, tester152@test.com feladotol 
+Õ#<  0Úß$<  `'Õ#<  ∞Úß$<  `'Õ#<  0Ûß$<  `'Õ#<  0Ùß$<  `'Õ#<  ∞Ôß$<tester516@test.com- mentve, tester152@test.com feladotol 
 Targy:  mez≈ë sz√≠v t√≥ szerelem h√°z sz√©l alma hold t√∂rt√©net asztal.
 Saved attachment: IMG_20241026_200124_7.jpg
 Email mentve: 
@@ -23994,7 +23992,7 @@ Email mentve:
 tester154@test.com- mentve, tester199@test.com feladotol 
 Targy:  h√≥ szerelem asztal kutya k√∂nyv utca t√≥ nap.
 Email mentve: 
-  ÷\+<  p”\+<  êŸ\+<  ¿‚\+<  –◊\+<  0Œ\+<  ∞√\+<  œ\+<  `◊\+<  ›\+<  ‡≈\+<   Á\+<  Äœ\+<  ê‡\+<  –Â\+<  êÁ\+<  –¬\+<  †„\+<  p·\+<  `¬\+<  ¡\+<  PÈ\+<  ‡”\+<  `Â\+<  p⁄\+<  @Ê\+<tester469@test.com- mentve, tester914@test.com feladotol 
+  ÷\+<  p”\+<  êŸ\+<  ¿‚\+<  –◊\+<  0Œ\+<  ∞√\+<  œ\+<  `◊\+<  ›\+<  ‡≈\+<   Á\+<  Äœ\+<  ê‡\+<  –Â\+<  êÁ\+<  –¬\+<  †„\+<  p·\+<  `¬\+<  ¡\+<  PÈ\+<  ‡”\+<  `Â\+<  p⁄\+<  @Ê\+<tester469@test.com- mentve, tester914@test.com feladotol 
 Targy:  h√≠d utca aut√≥.
 
 
@@ -24245,7 +24243,7 @@ Targy:  mad√°r csoda asztal asztal.
 
 
 Aktualis ido: 2025-03-13 18:47:15.431
- X   J   l   b   G   V   t   I   H   T   D   q   X   I   g   c   3   p   l   c   m   V   s   Z   W  3-masodperc  varakozas
+ X   J   l   b   G   V   t   I   H   T   D   q   X   I   g   c   3   p   l   c   m   V   s   Z   W  3-masodperc  varakozas
 
 Email mentve: 
 tester337@test.com- mentve, tester362@test.com feladotol 
@@ -25948,9 +25946,9 @@ Saved attachment: IMG_20241026_200124_7.jpg
 Saved attachment: IMG_20241026_200124_7.jpg
 Saved attachment: IMG_20241026_200124_7.jpg
 Email mentve: 
-G   z   D   o   W   1   w   Y   S   B   t   Z   X   N   l   I   H   N   6   w   6   l   s   I   G   l   k   x   Z   E   g      
-   w   6   l   s   Z   X   Q   g   Y   X   V   0   w   7   M   g   a   G   9   s   Z   C   B   r   w   7   Z   u   e   X   Y   u   I   G   v   D   q   X   A   g   d   M   O   2   c   n   T   D   q   W   5   l   d   C   B   z   e   s   O   t   b   i   B   1   d   G   N   h   I   M   O   p   b   G   V   0      
-   L   i   B   j   c   2   9   k   Y   S   B   z   e   s   O   p   a   y   B   l   c   m   T   F   k   S   B   2   Z   X   J   z   L   i   B   j   c   2   l   s   btester939@test.com- mentve, tester844@test.com feladotol 
+G   z   D   o   W   1   w   Y   S   B   t   Z   X   N   l   I   H   N   6   w   6   l   s   I   G   l   k   x   Z   E   g      
+   w   6   l   s   Z   X   Q   g   Y   X   V   0   w   7   M   g   a   G   9   s   Z   C   B   r   w   7   Z   u   e   X   Y   u   I   G   v   D   q   X   A   g   d   M   O   2   c   n   T   D   q   W   5   l   d   C   B   z   e   s   O   t   b   i   B   1   d   G   N   h   I   M   O   p   b   G   V   0      
+   L   i   B   j   c   2   9   k   Y   S   B   z   e   s   O   p   a   y   B   l   c   m   T   F   k   S   B   2   Z   X   J   z   L   i   B   j   c   2   l   s   btester939@test.com- mentve, tester844@test.com feladotol 
 Targy:  hold v√≠z bar√°t sz√≠n alma k√∂nyv hold aut√≥ alma.
 
 
@@ -27364,9 +27362,9 @@ tester288@test.com- mentve, tester5@test.com feladotol
 Targy:  bar√°t sz√©k kutya k√∂nyv.
 Email mentve: 
 tester180@test.com- mentve, tester992@test.com feladotol 
-   3   r   D   q   W   s   g   d   s   O   h   c   i   4   g   a   M   O   z      
-   I   G   j   D   o   X   o   g   b   W   V   z   Z   S   B   2   a   X   L   D   o   W   c   g   Y   X   N   6   d   G   F   s   I   G   t   l   c   n   Q   g   a   M   O   z   I   H   N   6   w   6   1   2   I   H   b   D   o   X   I   u   C   g   p   j   c   2   l   s   b   G   F   n   I   G   J   h      
-   c   s   O   h   d   C   B   t   Z   X   r   F   k  Targy:  csoda mez≈ë v√≠z t√≥ t√∂rt√©net foly√≥ ajt√≥ v√≠z.
+   3   r   D   q   W   s   g   d   s   O   h   c   i   4   g   a   M   O   z      
+   I   G   j   D   o   X   o   g   b   W   V   z   Z   S   B   2   a   X   L   D   o   W   c   g   Y   X   N   6   d   G   F   s   I   G   t   l   c   n   Q   g   a   M   O   z   I   H   N   6   w   6   1   2   I   H   b   D   o   X   I   u   C   g   p   j   c   2   l   s   b   G   F   n   I   G   J   h      
+   c   s   O   h   d   C   B   t   Z   X   r   F   k  Targy:  csoda mez≈ë v√≠z t√≥ t√∂rt√©net foly√≥ ajt√≥ v√≠z.
 Email mentve: 
 tester428@test.com- mentve, tester649@test.com feladotol 
 Targy:  vir√°g utca alma hegy mad√°r h√≠d.
@@ -30135,7 +30133,7 @@ Saved attachment: IMG_20241026_200124_7.jpg
 Aktualis ido: 2025-03-13 18:47:57.734
 4-masodperc  varakozas
 
-                                                                                                                                                            Saved attachment: IMG_20241026_200124_7.jpg
+                                                                                                                                                            Saved attachment: IMG_20241026_200124_7.jpg
 Email mentve: 
 tester774@test.com- mentve, tester140@test.com feladotol 
 Targy:  csillag bar√°t √©let aut√≥ alma tenger.
@@ -31342,7 +31340,7 @@ Aktualis ido: 2025-03-13 18:48:07.467
 
 Email mentve: 
 tester504@test.com- mentve, tester219@test.com feladotol 
-  `'Õ#<  0/'<  `'Õ#<  0'<  `'Õ#<  ∞&'<  `'Õ#<  ∞='<  `'Õ#<  03Targy:  h√°z l√°mpa h√≠d k√∂nyv k√©p v√°r t√©r mez≈ë sz√≠n.
+  `'Õ#<  0/'<  `'Õ#<  0'<  `'Õ#<  ∞&'<  `'Õ#<  ∞='<  `'Õ#<  03Targy:  h√°z l√°mpa h√≠d k√∂nyv k√©p v√°r t√©r mez≈ë sz√≠n.
           466- Kuldo 
 
                       483- Fogado
@@ -32277,7 +32275,7 @@ tester114@test.com- mentve, tester556@test.com feladotol
 Targy:  sz√©l tenger vers id≈ë mosoly ajt√≥ vers mad√°r erd≈ë.
 Email mentve: 
 tester58@test.com- mentve, tester390@test.com feladotol 
-                                             Targy:  h√≥ t√©rk√©p csillag ablak hegy t√©r.
+                                             Targy:  h√≥ t√©rk√©p csillag ablak hegy t√©r.
 Saved attachment: IMG_20241026_200124_7.jpg
 Email mentve: 
 tester470@test.com- mentve, tester732@test.com feladotol 
@@ -33497,7 +33495,7 @@ Saved attachment: IMG_20241026_200124_7.jpg
 Saved attachment: IMG_20241026_200124_7.jpg
 Saved attachment: IMG_20241026_200124_7.jpg
 Email mentve: 
-                                                                                                                                                                 tester123@test.com- mentve, tester990@test.com feladotol 
+                                                                                                                                                                 tester123@test.com- mentve, tester990@test.com feladotol 
 Targy:  k√©p id≈ë kutya hold hegy csillag nap mosoly sz√©l sz√©k.
 Email mentve: 
 tester535@test.com- mentve, tester582@test.com feladotol 
@@ -34244,7 +34242,7 @@ Saved attachment: IMG_20241026_200124_7.jpg
 2025-03-13 18:48:27.496
 Email mentve: 
 tester262@test.com- mentve, tester329@test.com feladotol 
-<  †Â1<  Â1<  ÄÂ1<  Â1<  `Â1<  –Â1<  @Â1<  Â1<  †Â1<  ÄÂ1<  Â1<  `Â1<  –Â1<  @Â1<  ∞Â1<    Â1<  ê Â1<  p!Â1<  ‡!Â1<  P"Targy:  k√©p vers hold bar√°t.
+<  †Â1<  Â1<  ÄÂ1<  Â1<  `Â1<  –Â1<  @Â1<  Â1<  †Â1<  ÄÂ1<  Â1<  `Â1<  –Â1<  @Â1<  ∞Â1<    Â1<  ê Â1<  p!Â1<  ‡!Â1<  P"Targy:  k√©p vers hold bar√°t.
 Saved attachment: IMG_20241026_200124_7.jpg
 Email mentve: 
 tester958@test.com- mentve, tester375@test.com feladotol 
@@ -39356,7 +39354,7 @@ of
 )
 DILD9 OK Fetch completed (1.528 + 0.589 + 0.894 secs).
 ).
-™‡: ´∫D‰ú¿Ï*ß√ﬂ¯#Ï∞\ﬁj∑M$.≤'ë¶√eNAœL~t˛£÷Â˚dˆ1ˇ `v˚‚F©º+“€&ËÑ ∆6Ç…ËÿÈú◊ÈßÅtester740@test.com- mentve, tester939@test.com feladotol 
+™‡: ´∫D‰ú¿Ï*ß√ﬂ¯#Ï∞\ﬁj∑M$.≤'ë¶√eNAœL~t˛£÷Â˚dˆ1ˇ `v˚‚F©º+“€&ËÑ ∆6Ç…ËÿÈú◊ÈßÅtester740@test.com- mentve, tester939@test.com feladotol 
 Targy:  k√∂nyv szerelem v√≠z sz√≠n l√°mpa vir√°g id≈ë k√∂nyv t√©r aut√≥.
 Email mentve: 
 tester909@test.com- mentve, tester953@test.com feladotol 
@@ -43283,7 +43281,7 @@ UUUS3CJRT/j3P0b+lQ6p/wAg5f8Ae/rRRQUcXD1f/eooooA//9k=
 --===============8112732955811684968==--
 )
 LGLL9 OK Fetch completed (7.588 + 0.414 + 0.502 secs).
-('<  `'Õ#<  0‹('<  `'Õ#<  0ˆ('<  `'Õ#<  0Ô('<  `'Õ#<  ∞Ë('<  `'Õ#<  ∞ı('<  `'Õ#<  ∞Ì('<  `'Õ#<  0Í('<  `'Õ#<  ∞‡('<  `'Õ#<  ∞Ï('<  `'Õ#<  ∞Ê('<  `'Õ#<  0ı('<  `'Õ#<  0˚('<  `'Õ#<  0˙('<  `'Õ#<  ∞Ù('<  `'Õ#<  0‚('<  `'Õ#<  ∞ˆ('<  `'Õ#<  ∞„('<  `'Õ#<  0Ï('<  `'Õ#<  ∞Î('<  `Saved attachment: IMG_20241026_200124_7.jpg
+('<  `'Õ#<  0‹('<  `'Õ#<  0ˆ('<  `'Õ#<  0Ô('<  `'Õ#<  ∞Ë('<  `'Õ#<  ∞ı('<  `'Õ#<  ∞Ì('<  `'Õ#<  0Í('<  `'Õ#<  ∞‡('<  `'Õ#<  ∞Ï('<  `'Õ#<  ∞Ê('<  `'Õ#<  0ı('<  `'Õ#<  0˚('<  `'Õ#<  0˙('<  `'Õ#<  ∞Ù('<  `'Õ#<  0‚('<  `'Õ#<  ∞ˆ('<  `'Õ#<  ∞„('<  `'Õ#<  0Ï('<  `'Õ#<  ∞Î('<  `Saved attachment: IMG_20241026_200124_7.jpg
 Email mentve: 
 tester357@test.com- mentve, tester850@test.com feladotol 
 Targy:  nap v√≠z k√∂nyv k√©p √©let.
@@ -44287,7 +44285,7 @@ Aktualis ido: 2025-03-13 18:49:34.971
 2025-03-13 18:49:34.972
 Saved attachment: IMG_20241026_200124_7.jpg
                                                                                                                                           2025-03-13 18:49:35.009
- V   y   Z   M   W   R   I   H   R   l   b   m   d   l   c   i   B   r   w   7   Z   u   e   X   Y   g   a   8   O   p   c   C   B   o   w   6   F   6   I   G   t                                                                                                                                          Aktiv szalak szama: 1699
+ V   y   Z   M   W   R   I   H   R   l   b   m   d   l   c   i   B   r   w   7   Z   u   e   X   Y   g   a   8   O   p   c   C   B   o   w   6   F   6   I   G   t                                                                                                                                          Aktiv szalak szama: 1699
 
 Email mentve: 
 tester33@test.com- mentve, tester944@test.com feladotol 
@@ -44755,7 +44753,7 @@ Aktualis ido: 2025-03-13 18:49:38.313
 
 Saved attachment: IMG_20241026_200124_7.jpg
 Email mentve: 
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   tester300@test.com- mentve, tester536@test.com feladotol 
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   tester300@test.com- mentve, tester536@test.com feladotol 
 Targy:  t√©r id≈ë t√©rk√©p mad√°r id≈ë.
 Email mentve: 
 tester775@test.com- mentve, tester334@test.com feladotol 

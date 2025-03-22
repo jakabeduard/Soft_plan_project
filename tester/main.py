@@ -16,7 +16,7 @@ from written_by_us.imap import fetch_and_save_email
 from written_by_us.load_server_capacity import  load_server_capacity
 
 from written_by_us.reset_server import cleaning_server
-from written_by_us.results_counter import count_errors_in_log
+from written_by_us.results_counter import count_errors_in_log, find_text_in_file
 from written_by_us.smtp import send_email_with_attachment
 
 def stop_loop():
@@ -24,14 +24,14 @@ def stop_loop():
     print("Leállítva.")
 
 if __name__ == '__main__':
-    file="outputteszt.txt"
-    count_errors_in_log(file)
+
+    find_text_in_file("outputteszt.txt")
     # sys.stdout = open("outputteszt.txt", "w", encoding="utf-8", errors="ignore")
-    #
-    #
-    #
-    #
-    #
+
+
+
+
+
     #
     # api_key="E9A377-B0723B-53A5DC-D12E23-67E2F0"
     # host_url="https://edu.mailserver.ro"
@@ -40,12 +40,12 @@ if __name__ == '__main__':
     # ssh_password="01234"
     # n = 1000
     # max_paragraphs=10
-    # wait_time=100
-    # num_threads = 500
+    # wait_time=1800
+    # num_threads = 20
     # threads = []
-    #
-    #
-    #
+
+
+
     # ###################################################################
     #
     #
@@ -86,5 +86,5 @@ if __name__ == '__main__':
     #
     # input("Nyomj le egy gombot")
     # stop_loop()
-    #
+
     # sys.stdout.close()
