@@ -11,60 +11,22 @@ import paramiko
 
 from written_by_us import config
 
-
-
-# def getting_server_info(time_to_wait_s, hostname, username, password):
-#     """ Rendszerinformációkat kérdez le, amíg a felhasználó nem állítja le. """
-#     global stop_thread  # Figyeljük a stop flaget
-#     while not stop_thread:
-#         time.sleep(time_to_wait_s)
-#         result = get_system_stats_and_htop_output(hostname, username, password)
-#         if result:
-#             print(result)  # Csak akkor írjuk ki, ha nem üres
-#     print("A getting_server_info szál leállt.")
-#
-# def get_system_stats_and_htop_output(host, username, password):
-#     """ SSH-n keresztül rendszeradatokat kérdez le egy szerverről. """
-#     try:
-#         ssh = paramiko.SSHClient()
-#         ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
-#         ssh.connect(host, username=username, password=password)
-#
-#         stdin, stdout, stderr = ssh.exec_command(
-#             "python3 -c 'import psutil; import subprocess; "
-#             "print(psutil.cpu_percent(interval=1, percpu=True)); "
-#             "print(psutil.getloadavg()); "
-#             "print(subprocess.check_output([\"sensors\"], text=True))'"
-#         )
-#
-#         output = stdout.read().decode().splitlines()
-#         cpu_percent = eval(output[0]) if len(output) >= 1 else []
-#         cpu_load_avg = eval(output[1]) if len(output) >= 2 else []
-#
-#         result = (
-#             f"{datetime.now().strftime('%Y-%m-%d %H:%M:%S.%f')[:-3]}\n"
-#             f"CPU terhelés (magonként) %-ban: {cpu_percent}\n"
-#         )
-#
-#         return result
-#
-#     except Exception as e:
-#         return f"Hiba történt: {e}"
-#
-#     finally:
-#         ssh.close()
-
+def actual_time():
+    while config.running:
+        print(datetime.now().strftime("%Y-%m-%d %H:%M:%S.%f\n")[:-3])
+        time.sleep(600)
 
 
 
 
 def getting_server_info(time_to_wait_s, hostname, username, password):
     while config.running:
-        time.sleep(time_to_wait_s)
+        # time.sleep(time_to_wait_s)
 
         result = get_system_stats_and_htop_output(hostname, username, password)
         if result:
             print(result)  # Csak akkor írjuk ki, ha nem üres
+        time.sleep(time_to_wait_s)
 
 
 def get_system_stats_and_htop_output(host, username, password):
@@ -73,22 +35,27 @@ def get_system_stats_and_htop_output(host, username, password):
         ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
         ssh.connect(host, username=username, password=password)
 
+        # Get CPU per-core percent, load average, and temperature
         stdin, stdout, stderr = ssh.exec_command(
             "python3 -c 'import psutil; import subprocess; "
             "print(psutil.cpu_percent(interval=1, percpu=True)); "
+            "print(psutil.cpu_percent(interval=1)); "  # Overall CPU load
             "print(psutil.getloadavg()); "
             "print(subprocess.check_output([\"sensors\"], text=True))'"
         )
 
         output = stdout.read().decode().splitlines()
-        if len(output) >= 2:
+
+        if len(output) >= 3:
             cpu_percent = eval(output[0])
-            cpu_load_avg = eval(output[1])
+            overall_cpu_percent = eval(output[1])  # Overall CPU usage
+            cpu_load_avg = eval(output[2])
         else:
             cpu_percent = []
+            overall_cpu_percent = 0
             cpu_load_avg = []
 
-        sensors_output = "\n".join(output[2:])
+        sensors_output = "\n".join(output[3:])
 
         cpu_temp = "Hőmérséklet információ nem elérhető"
         adapter_temp = "Hőmérséklet információ nem elérhető"
@@ -100,6 +67,7 @@ def get_system_stats_and_htop_output(host, username, password):
 
         annotated_output = []
 
+        # Parse temperature information and top output
         for line in sensors_output.splitlines() + top_output.splitlines():
             if "cpu_thermal-virtual-0" in line:
                 cpu_section = True
@@ -120,13 +88,15 @@ def get_system_stats_and_htop_output(host, username, password):
             elif line.startswith("MiB Swap:"):
                 annotated_output.append(f"Swap memoria hasznalat: {line}")
 
+        # Prepare final result
         result = (
-            f"{datetime.now().strftime('%Y-%m-%d %H:%M:%S.%f')[:-3]}\n"
-            f"CPU homerseklet: {cpu_temp}\n"
-            f"Adapter homerseklet: {adapter_temp}\n"
-            f"CPU terheles (magonként) %-ban: {cpu_percent}\n"
-            + "\n".join(annotated_output)
-            + "\n"
+                # f"{datetime.now().strftime('%Y-%m-%d %H:%M:%S.%f')[:-3]}\n"
+                f"CPU homerseklet: {cpu_temp}\n"
+                f"Adapter homerseklet: {adapter_temp}\n"
+                f"CPU terheles (ossz): {overall_cpu_percent}%\n"  # Display overall CPU load
+                f"CPU terheles (magonként) %-ban: {cpu_percent}\n"
+                + "\n".join(annotated_output)
+                + "\n"
         )
 
         return result
@@ -135,7 +105,6 @@ def get_system_stats_and_htop_output(host, username, password):
         return f"Hiba történt: {e}"
     finally:
         ssh.close()
-
 #elozo
 # def getting_server_info( time_to_wait_s, hostname, username, password):
 #     while not stop_thread:
@@ -250,10 +219,10 @@ def monitor_active_threads(wait_time, hostname, username, password):
 
         # Szálak monitorozása
         while config.running:
-            time.sleep(wait_time)
+
             active_threads = get_active_threads(ssh_client)
-            print("                                                                                                                                         ",datetime.now().strftime("%Y-%m-%d %H:%M:%S.%f")[:-3])
-            print(f"                                                                                                                                          Aktiv szalak szama: {active_threads}\n")
+            # print("                                                                                                                                         ",datetime.now().strftime("%Y-%m-%d %H:%M:%S.%f")[:-3])
+            print(f"\nAktiv szalak szama: {active_threads}\n")
 
             # Ha már csak a fő szál fut (ami a rendszer által alapértelmezett), kiléphetünk
             if active_threads <= 1:
@@ -261,6 +230,7 @@ def monitor_active_threads(wait_time, hostname, username, password):
                 break
 
               # 1 másodperc várakozás, hogy ne terhelje túl a rendszert
+            time.sleep(wait_time)
 
         # SSH kapcsolat bontása
         ssh_client.close()

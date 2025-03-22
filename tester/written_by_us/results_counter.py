@@ -70,3 +70,48 @@ def find_text_in_file(filename):
 
 
 
+import re
+from collections import defaultdict
+
+
+def group_log_by_timestamp(filename):
+    patterns = {
+        "too many connections": 0,
+        "Email Sikeresen elkuldve": 0,
+        "Email mentve": 0,
+        "CPU h\u0151m\u00e9rs\u00e9klet": 0,
+        "CPU terhel\u00e9s": 0
+    }
+
+    grouped_logs = defaultdict(lambda: patterns.copy())
+
+    try:
+        with open(filename, 'r', encoding='latin-1', errors='ignore') as file:
+            current_timestamp = None
+
+            for line in file:
+                timestamp_match = re.match(r"(\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}\.\d{3})", line)
+                if timestamp_match:
+                    current_timestamp = timestamp_match.group(1)
+
+                for pattern in patterns.keys():
+                    if re.search(pattern, line, re.IGNORECASE):
+                        if current_timestamp:
+                            grouped_logs[current_timestamp][pattern] += 1
+
+        # Kiírás rendezett formában
+        print("A fájl összesen", sum(sum(d.values()) for d in grouped_logs.values()), "sort tartalmaz.")
+        for pattern in patterns.keys():
+            total_count = sum(group[pattern] for group in grouped_logs.values())
+            print(f"A: '{pattern}' {total_count} sorban található meg.")
+
+        print("\nCsoportosított eredmények:")
+        for timestamp, counts in sorted(grouped_logs.items()):
+            print(f"{timestamp}")
+            for pattern, count in counts.items():
+                if count > 0:
+                    print(f"    A: '{pattern}' {count} alkalommal található meg.")
+            print()
+
+    except FileNotFoundError:
+        print(f"A(z) {filename} fájl nem található.")
